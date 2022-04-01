@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数字时钟</title>
+
+<style>
+    .test {
+        text-align: center;
+        position: relative;
+        margin: 240px auto;
+
+    }
+    .test .text {
+        font-size: 200px;
+        font-weight: bold;
+        color: #034b03;
+    }
+
+</style>
+</head>
+<body>
+<div id="app">
+    <div class="test">
+            <span class="text">
+                {{ hour }}:{{ min }}:{{ sec }}
+            </span>
+
+    </div>
+</div>
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+
+                hour: '00',
+                min: '00',
+                sec: '00',
+               timer:null,
+
+            },
+            methods: {
+                autoMove:function () {
+                    this.timer = setInterval(res => {
+                        this.date = new Date();
+                        this.hour = this.date.getHours();
+                        this.min = this.date.getMinutes();
+                        this.sec = this.date.getSeconds();
+                        this.hour = this.hour > 9 ? this.hour : '0' + this.hour;
+                        this.min = this.min > 9 ?  this.min : '0' + this.min;
+                        this.sec = this.sec > 9 ? this.sec : '0' + this.sec;
+                    }, 1000);
+
+                },
+            },
+            mounted() {
+                this.autoMove();
+            }
+        })
+
+    </script>
+
+</body>
+</html>

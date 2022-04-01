@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<template>
+    <div>
+        <img :src="image.src" :alt="image.name"/>
+    </div>
+</template>
+<img src="../img/w_uw.png" height="312" width="97"/>
+
+<script>
+export default {
+    data(){
+        return{
+            image:{name:'vue log',src:"../img/w_uw.png"}
+        }
+    }
+}
+</script>
+
+
+
+</body>
+</html>

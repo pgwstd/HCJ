@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数字时钟</title>
+  <!-- 时钟样式 -->
+  <style>
+      /* 时钟位置样式 */
+    .test {
+      margin: 240px auto;
+      text-align: center;
+      position: relative;
+
+    }
+      /* 时钟字体颜色样式 */
+    .test .text {
+      font-size: 200px;
+      font-weight: bold;
+      color: #034b03;
+    }
+
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="test">
+            <span class="text">
+                {{ hour }}:{{ min }}:{{ sec }}  <!-- 元素绑定  -->
+
+            </span>
+
+  </div>
+</div>
+<script src="../js/vue.js"></script>   <!-- 引用 Vue 文件 -->
+<script>
+  var app = new Vue({   //创建Vue实例
+    el: "#app",//挂载id为app的DOM节点
+    data: {
+      hour: '00',  // 初始化页面小时显示的数值
+      min: '00',// 初始化页面分钟显示的数值
+      sec: '00',// 初始化页面秒的数值
+    },
+    mounted:function () {
+        var _this=this;
+      this.timer = setInterval(function (){
+          _this.date = new Date();//获取系统时间
+          _this.hour = _this.date.getHours();//获取系统小时时间
+          _this.min = _this.date.getMinutes();//获取系统分钟时间
+          _this.sec = _this.date.getSeconds();//获取系统秒时间
+          _this.hour = _this.hour > 9 ? _this.hour : '0' + _this.hour;//如果小时时间没能大于9的话，前一位就补0
+          _this.min = _this.min > 9 ?  _this.min : '0' + _this.min;//如果分钟时间没能大于9的话，前一位就补0
+          _this.sec = _this.sec > 9 ? _this.sec : '0' + _this.sec;//如果秒时间没能大于9的话，前一位就补0
+        }, 1000);//间隔1秒刷新DOM
+
+      },
+    })
+
+</script>
+
+</body>
+</html>
