@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <title>体质指数(BMI)指数</title>
     <script src="../js/vue.js"></script>
+<!--    css字体样式-->
+    <style type="text/css">
+        .text {
+            font-size: 20px;
+            color: fuchsia;
+
+        }
+    </style>
 </head>
 <body>
 <h1>体质指数(BMI)计算</h1>
 <div id="app">
     <label for="male">
-        <input type="radio" id="male" value="男" v-model:ondragend="gender">男
+        <input type="radio" id="male" value="男" v-model="gender">男
     </label>
     <label for="female">
-        <input type="radio" id="female" value="女" v-model:ondragend="gender">女
+        <input type="radio" id="female" value="女" v-model="gender">女
     </label>
     <div id="height">
         身高:<input type="text" v-model="height">公分(cm)
@@ -20,106 +28,107 @@
     <div id="weight">
         体重:<input type="text" v-model="weight">公斤(kg)
     </div>
-
-    <div>您的体质指数为:{{bmi}}</div>
-    <div>您的身体胖瘦情况为:{{judgement}}</div>
-    <div>您的体态看来也许像:</div>
-<!--    <div>{{judgement_2}}</div>-->
+    <div class="text">
+        <!--用V-showu判断身高体重是否是0，如果是零就不显示-->
+        <div v-show="weight >0 && height > 0">
+            <p>您的体质指数为:{{bmi}}</p>
+            <p>您的身体胖瘦情况为:{{judgement}}</p>
+            <p>您的体态看来也许像:</p>
+            <img :src="db_img.imgurl">
+        </div>
+    </div>
 </div>
+
 <!--体质指数（BMI）=体重（kg）÷身高^2（m）-->
 <script>
-    var  app=new Vue({
-        el:"#app",
-        data:{
-            gender:'男',
-            height:'182',
-            weight:'65',
-
+    var app = new Vue({
+        el: "#app",
+        data: {
+            gender: '男',
+            height: ' ',
+            weight: ' '
 
         },
+        // 计算BMI并只保留两位小数
         computed: {
             bmi() {
+
                 return (this.weight / ((this.height / 100) * (this.height / 100))).toFixed(2)
             },
 
-                judgement() {
-                  if (this.gender==='女'){
+         // 判断胖瘦情况
+            judgement() {
+                if (this.gender === '女') {
                     if (this.bmi < 18) {
                         return "过瘦"
-                    } else if (18 <= this.bmi <= 23) {
+                    } else if (18 <= this.bmi && this.bmi <= 23) {
                         return "标准"
-                    } else if (24 <= this.bmi <= 27) {
+                    } else if (24 <= this.bmi && this.bmi <= 27) {
+                        return "过胖"
+                    } else
+                        return "肥胖"
+                } else {
+                    if (this.bmi < 20) {
+                        return "过瘦"
+                    } else if (20 <= this.bmi && this.bmi <= 25) {
+                        return "标准"
+                    } else if (26 <= this.bmi && this.bmi <= 29) {
                         return "过胖"
                     } else
                         return "肥胖"
                 }
-                    else
-                        {
-                            if (this.bmi < 20) {
-                                return "过瘦"
-                            } else if (20 <= this.bmi <= 25) {
-                                return "标准"
-                            } else if (26 <= this.bmi <= 29) {
-                                return "过胖"
-                            } else
-                                return "肥胖"
-                        }
-                    },
 
 
-
-            judgement_2() {
+            },
+            //判断胖瘦情况并输出相应的图片
+            db_img() {
                 if (this.gender === '女') {
                     if (this.bmi < 18) {
                         return {
-                            imgurl:require("../img/w_uw.png")
+                            imgurl: "../img/w_uw.png"
                         }
 
-                    } else if (18 <= this.bmi <= 23) {
+                    } else if (18 <= this.bmi && this.bmi <= 23) {
                         return {
-                            imgurl_2:require("../img/w_hw.png")
+                            imgurl: "../img/w_hw.png"
                         }
 
-                    } else if (24 <= this.bmi <= 27) {
+                    } else if (24 <= this.bmi && this.bmi <= 27) {
                         return {
-                            imgurl_3:require("../img/w_ow.png")
+                            imgurl: "../img/w_ow.png"
                         }
 
                     } else
                         return {
-                            imgurl_4:require("../img/w_obese.png")
+                            imgurl: "../img/w_obese.png"
                         }
 
-                    }
-                else
-
-                if (this.bmi < 20) {
-                    return{
-                        imgurl_5:require("/img/m_uw.png")
-                    }
-                } else if (20 <= this.bmi <= 25) {
+                } else if (this.bmi < 20) {
                     return {
-                        imgurl_6:require("/img/m_hw.png")
+                        imgurl: "/img/m_uw.png"
+                    }
+                } else if (20 <= this.bmi && this.bmi <= 25) {
+                    return {
+                        imgurl: "/img/m_hw.png"
                     }
 
-                } else if (26 <= this.bmi <= 29) {
+                } else if (26 <= this.bmi && this.bmi <= 29) {
                     return {
-                        imgurl_7:require("/img/m_ow.png")
+                        imgurl: "/img/m_ow.png"
                     }
                 } else
                     return {
-                        imgurl_8:require("/img/m_obese.png")
-                }
+                        imgurl: "/img/m_obese.png"
+                    }
             }
-
-        }
+        },
     });
     // 1.过轻：低于18.5
     // 2.正常：18.5-23.9
     // 3.过重：24-27
     // 4.肥胖：28-32
 
-   </script>
+</script>
 
 </body>
 </html>
