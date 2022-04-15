@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>体质指数(BMI)指数</title>
+
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>体质指数(BMI)计算</h1>
+<div id="app">
+    <label for="male">
+        <input type="radio" id="male" value="男" v-model:ondragend="gender">男
+    </label>
+    <label for="female">
+        <input type="radio" id="female" value="女" v-model:ondragend="gender">女
+    </label>
+    <div id="height">
+        身高:<input type="text" v-model="height">公分(cm)
+    </div>
+    <div id="weight">
+        体重:<input type="text" v-model="weight">公斤(kg)
+    </div>
+    <p>您的体质指数为:{{bmi}}</p>
+    <p>您的身体胖瘦情况为:{{ment}}</p>
+    <p>您的体态看来也许像:</p>
+    <img :src="img.img">
+
+</div>
+
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            gender: '男',
+            height: ' ',
+            weight: ' ',
+
+        },
+        computed: {
+            bmi() {
+                return (this.weight / ((this.height / 100) * (this.height / 100))).toFixed(2)
+            },
+
+
+            ment() {
+                if (this.gender === '女') {
+                    if (this.bmi < 18) {
+                        return "过瘦"
+                    } else if (  this.bmi<= 23) {
+                        return "标准"
+                    } else if ( this.bmi<= 27) {
+                        return "过胖"
+                    } else
+                        return "肥胖"
+                } else {
+                    if (this.bmi < 20) {
+                        return "过瘦"
+                    } else if ( this.bmi<= 25) {
+                        return "标准"
+                    }else if (this.bmi<= 29) {
+                        return "过胖"
+                    } else
+                        return "肥胖"
+                }
+
+
+            },
+            img() {
+                if (this.gender === '女') {
+                    if (this.bmi < 18) {
+                        return {
+                            img: "../img/w_uw.png"
+                        }
+
+                    } else if ( this.bmi<= 23) {
+                        return {
+                            img: "../img/w_hw.png"
+                        }
+
+                    } else if ( this.bmi<= 27) {
+                        return {
+                            img: "../img/w_ow.png"
+                        }
+
+                    } else
+                        return {
+                            img: "../img/w_obese.png"
+                        }
+
+                } else if (this.bmi < 20) {
+                    return {
+                        img: "/img/m_uw.png"
+                    }
+                } else if (this.bmi<= 25) {
+                    return {
+                        img: "/img/m_hw.png"
+                    }
+
+                } else if (this.bmi<= 29) {
+                    return {
+                        img: "/img/m_ow.png"
+                    }
+                } else
+                    return {
+                        img: "/img/m_obese.png"
+                    }
+
+
+            }
+
+        },
+
+    });
+
+</script>
+
+</body>
+</html>

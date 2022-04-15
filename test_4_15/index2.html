@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>体质指数(BMI)计算</title>
+    <!--引入vue.js核心文件-->
+    <script src="vue.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+
+        .bmi-style{
+            color: #435388;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>体质指数(BMI)计算</h1>
+    <label for="male">
+        <input type="radio" id="male" value="男" v-model="gender">男
+    </label>
+    <label for="female">
+        <input type="radio" id="female" value="女" v-model="gender">女
+    </label>
+    <p>
+        <label>
+            体重：<input type="text" v-model="weight">公斤(kg)
+        </label>
+    </p>
+    <p>
+        <label>
+            身高：<input type="text" v-model="height">公分(cm)
+        </label>
+    </p>
+    <div class="bmi-style" v-show="weight != 0 && height !=0" v-cloak>
+        <h2>您的体质指数为：{{bmi}}</h2>
+        <h2>您身体的胖瘦情况为：{{status}}</h2>
+        <h2>您的体态看来也许像：</h2>
+       <img v-bmi img:src="statusAndGender"/>
+    </div>
+
+</div>
+<script>
+    vue.statusAndGender('bmi img',function (el,binding) {
+        var img = el.getAttribute('img:src');
+    });
+    var app=new Vue({
+        el: "#app",
+        data: {
+            gender: "女",
+            weight: 0,
+            height: 0,
+            status: ""
+        },
+        computed:{
+            bmi: function(){
+                var height = parseInt(this.height) / 100.0;
+                return (parseInt(this.weight) / (height * height)).toFixed(2);
+            },
+            imgSrc: function(){
+                var src = ""
+                if(this.gender == "女"){
+                    if(this.bmi < 18.5){
+                        src = "images/w_uw.png";
+                        this.status = "过瘦";
+                    }
+                    else if(this.bmi <= 24.9){
+                        src = "images/w_hw.png";
+                        this.status = "标准";
+                    }
+                    else if(this.bmi <= 29.9){
+                        src = "images/w_ow.png";
+                        this.status = "过胖";
+                    }
+                    else if(this.bmi >= 30){
+                        src = "images/w_obese.png";
+                        this.status = "肥胖";
+                    }
+                    else{
+                        src = ""
+                        this.status = "";
+                    }
+                } else {
+                    if(this.bmi < 18.5){
+                        src = "images/m_uw.png";
+                        this.status = "过瘦";
+                    }
+                    else if(this.bmi <= 24.9){
+                        src = "images/m_hw.png";
+                        this.status = "标准";
+                    }
+                    else if(this.bmi <= 29.9){
+                        src = "images/m_ow.png";
+                        this.status = "过胖";
+                    }
+                    else if(this.bmi >= 30){
+                        src = "images/m_obese.png";
+                        this.status = "肥胖";
+                    }
+                    else{
+                        src = ""
+                        this.status = "";
+                    }
+                }
+                return src;
+            }
+        }
+    });
+</script>
+</body>
+</html>
