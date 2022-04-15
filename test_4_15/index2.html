@@ -37,13 +37,13 @@
         <h2>您的体质指数为：{{bmi}}</h2>
         <h2>您身体的胖瘦情况为：{{status}}</h2>
         <h2>您的体态看来也许像：</h2>
-       <img v-bmi img:src="statusAndGender"/>
+       <img v-bmiimg:src="statusAndGender"/>
     </div>
 
 </div>
 <script>
-    vue.statusAndGender('bmi img',function (el,binding) {
-        var img = el.getAttribute('img:src');
+    vue.statusAndGender('bmiimg',function (el,binding) {
+        el.src=binding.value;
     });
     var app=new Vue({
         el: "#app",
@@ -58,7 +58,7 @@
                 var height = parseInt(this.height) / 100.0;
                 return (parseInt(this.weight) / (height * height)).toFixed(2);
             },
-            imgSrc: function(){
+            statusAndGender: function(){
                 var src = ""
                 if(this.gender == "女"){
                     if(this.bmi < 18.5){

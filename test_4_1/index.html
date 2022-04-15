@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>体质指数(BMI)指数</title>
     <script src="../js/vue.js"></script>
-<!--    css字体样式-->
+    <!--    css字体样式-->
     <style type="text/css">
         .text {
             font-size: 20px;
@@ -34,13 +34,18 @@
             <p>您的体质指数为:{{bmi}}</p>
             <p>您的身体胖瘦情况为:{{judgement}}</p>
             <p>您的体态看来也许像:</p>
-            <img :src="db_img.imgurl">
+            <!--            <img :src="db_img.imgurl">-->
+            <img v-bmiimg:src="stausAndGender">
         </div>
     </div>
 </div>
 
 <!--体质指数（BMI）=体重（kg）÷身高^2（m）-->
 <script>
+    Vue.directive('bmiimg', function (el, binding) {
+        el.src = binding.value;
+    });
+
     var app = new Vue({
         el: "#app",
         data: {
@@ -56,9 +61,9 @@
                 return (this.weight / ((this.height / 100) * (this.height / 100))).toFixed(2)
             },
 
-         // 判断胖瘦情况
+            // 判断胖瘦情况
             judgement() {
-                if (this.gender === '女') {
+                if (this.gender == '女') {
                     if (this.bmi < 18) {
                         return "过瘦"
                     } else if (18 <= this.bmi && this.bmi <= 23) {
@@ -81,48 +86,50 @@
 
             },
             //判断胖瘦情况并输出相应的图片
-            db_img() {
-                if (this.gender === '女') {
+            stausAndGender: function () {
+                if (this.gender == '女') {
                     if (this.bmi < 18) {
-                        return {
-                            imgurl: "../img/w_uw.png"
-                        }
 
-                    } else if (18 <= this.bmi && this.bmi <= 23) {
-                        return {
-                            imgurl: "../img/w_hw.png"
-                        }
+                        src = "/img/w_uw.png";
 
-                    } else if (24 <= this.bmi && this.bmi <= 27) {
-                        return {
-                            imgurl: "../img/w_ow.png"
-                        }
 
-                    } else
-                        return {
-                            imgurl: "../img/w_obese.png"
-                        }
+                    } else if (this.bmi <= 23) {
 
-                } else if (this.bmi < 20) {
-                    return {
-                        imgurl: "/img/m_uw.png"
+                        src = "/img/w_hw.png";
+
+
+                    } else if (this.bmi <= 27) {
+
+                        src = "/img/w_ow.png";
+
+                    } else{
+                        src = "/img/w_fw.png";
                     }
-                } else if (20 <= this.bmi && this.bmi <= 25) {
-                    return {
-                        imgurl: "/img/m_hw.png"
-                    }
+                }
 
-                } else if (26 <= this.bmi && this.bmi <= 29) {
-                    return {
-                        imgurl: "/img/m_ow.png"
+                    else {
+
+                       if (this.bmi < 20) {
+
+                            src = "/img/m_uw.png";
+
+                        } else if (this.bmi <= 25) {
+
+                            src = "/img/m_hw.png";
+
+
+                        } else if (this.bmi <= 29) {
+                            src = "/img/m_ow.png";
+
+                        } else {
+
+                        src = "/img/m_obese.png";
                     }
-                } else
-                    return {
-                        imgurl: "/img/m_obese.png"
                     }
-            }
-        },
-    });
+                return src;
+                }
+              }
+        });
     // 1.过轻：低于18.5
     // 2.正常：18.5-23.9
     // 3.过重：24-27
