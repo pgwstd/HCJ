@@ -8,14 +8,12 @@
 <body>
 <div id="app">
     <counter></counter>
-<hr/>
-    <counter></counter>
 </div>
 <template id="tmp1">
     <div>
-        <input type="button" value="+1" @  click="add">
-        {{count}}
-        <input type="button" value="-1" @  click="sub">
+        <input type="button" value="平方"  v-on:click="square">
+        <input type="button" value="乘以100"  v-on:click="multiply">
+        <p>{{count}}</p>
     </div>
     </template>
 
@@ -24,18 +22,18 @@
         template:'#tmp1',
         data:function(){
             return {
-                count:0
+                count:10
             }
         },
         methods:{
-            add:function(){
-                this.count++;
+            square:function(){
+                this.count=this.count*this.count;
             },
-            sub:function(){
-                this.count--;
+            multiply:function(){
+                this.count=this.count*100;
             }
         }
-    })
+    });
     new Vue({
         el:'#app'
     })
