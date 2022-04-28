@@ -1,0 +1,25 @@
+<!--
+ Created by 潘光伟 on 2022/4/25.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <script src="vue.js"></script>
+    <script src="inputComponent.js"></script>
+</head>
+<body>
+<div id="app">
+    <input-number v-model="value" :max="100" :min="0"></input-number>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            value: 1
+        }
+    });
+</script>
+</body>
+</html>
