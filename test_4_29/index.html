@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Component Demo</title>
+    <!--    引入vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        /*鼠标移入效果*/
+        .test:hover {
+            background-color: rgba(226, 55, 238, 0.79);
+        }
+        /*左边div的样式*/
+       .header_left{
+           width: 80px;
+           height: 300px;
+           border: 2px solid deepskyblue;
+           text-align: left;
+           float: left;
+           margin-right: 5px;
+           padding:0 10px 0 10px;
+           color:deepskyblue;
+       }
+       /*右边div的样式*/
+        .header_right{
+            width: 400px;
+            height: 300px;
+            border: 2px solid deepskyblue;
+            text-align: left;
+            float: left;
+            margin-right: 5px;
+            padding:0 10px 0 10px;
+            color:deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="header_left">
+        <h3 class="test">Menu</h3>
+        <!-- 调用菜单 -->
+        <menu-left :value="menuItems"></menu-left>
+    </div>
+    <div class="header_right">
+        <h3>Content</h3>
+        <menu-right></menu-right>
+    </div>
+</div>
+
+<template id="left">
+    <div>
+        <div v-for="item in value">
+            <h3 class="test"  @click="titleclk(item)">{{item[0]}}</h3>
+            <div v-show="isshow === item">
+                <div class="test"  v-for="vi in item.slice(1)" @click="viclk(vi)">
+                    {{vi}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="right">
+    <div>
+        {{value}}
+    </div>
+</template>
+
+<script>
+    //bus:中央事件总线
+    var bus = new Vue();
+    //定义一个菜单数组File,Eidt,Window,而File点击后会下拉菜单(Open,Save,SaveAs,Print),还有Window点击后会下拉菜单(Tool,Console)
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            menuItems:[['File','Open','Save','Save as','Print'],['Edit'],['Window','Tools','Console']],
+        },
+        components:{
+            menuLeft:{
+                template:"#left",
+                data: function () {
+                    return{
+                        isshow:false
+                    }
+                },
+                props:['value'],
+                methods: {
+                    titleclk(item){
+                        if (item.length === 0){
+                            bus.$emit('vitemit',vi)
+                        }
+                        if (this.isshow === item){
+                            this.isshow = false
+                        }else{
+                            this.isshow = item
+                        }
+                    },
+                    viclk(vi){
+                        bus.$emit('vitemit',vi)
+                    }
+                }
+            },
+            menuRight:{
+                template: '#right',
+                data:function (){
+                    return{
+                        value:''
+                    }
+                },
+                created(){
+                    bus.$on('vitemit',val=>{
+                        this.value = val
+                    })
+                }
+            }
+        },
+    });
+</script>
+</body>
+</html>

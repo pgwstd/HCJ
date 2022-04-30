@@ -1,0 +1,43 @@
+<!--
+ Created by 潘光伟 on 2022/4/30.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<mycom1></mycom1>
+    <mycom2></mycom2>
+</div>
+<script>
+    var bus = new Vue()
+    var vm = new Vue({
+        el: '#app',
+        data: {},
+        methods: {},
+        components: {
+            mycom1: {
+                template: '<div><p>我是组件mycom1</p><input type="button" value="com1 按钮" v-on="send"></div>',
+                methods: {
+                    send() {
+                        bus.$emit('fromcom1', '你好，我是mycom1')
+                    }
+                }
+            },
+            mycom2: {
+                template: '<div><p>我是组件mycom2</p></div>',
+                mounted() {
+                    bus.$on('fromcom1', function (value) {
+                        alert(value)
+                    })
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
