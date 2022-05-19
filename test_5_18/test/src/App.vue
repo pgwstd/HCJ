@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<Header />
+    <div class="content">
+      <div class="panel left">
+        <Menu />
+      </div>
+      <div class="panel right">
+        <div class="panel-main">
+        <router-view />
+    </div>
+  </div>
+  </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import Menu from './components/Menu.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,Footer,Menu
   }
 }
 
@@ -25,5 +37,30 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.content{
+  display: flex;
+  position: absolute;
+  top:58px;
+  bottom: 40px;
+  width: 100%;
+}
+.panel{
+  flex: 1;
+  height: 100%;
+}
+.left{
+  flex: 0 0 20%;
+  background-color: #545c64;
+}
+.left a{
+  color: white;
+  text-decoration: none;
+}
+.right{
+  margin: 5px;
+}
+.content-main {
+  margin-top: 10px;
 }
 </style>
