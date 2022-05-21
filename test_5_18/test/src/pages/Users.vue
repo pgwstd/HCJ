@@ -37,7 +37,7 @@ export default{
   }
 }
 </script>
-<style scoped>  /*样式只能在这里写*/
+<style scoped>  /*样式只能在这里用*/
 table{
   width:100%;
   border-collapse:collapse;
