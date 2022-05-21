@@ -1,5 +1,5 @@
 <template>
-   <hader class="header">我的后台管理系统</hader>
+   <header class="header">我的后台管理系统</header>
 </template>
 <script>
 export default {

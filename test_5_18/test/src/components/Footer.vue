@@ -12,7 +12,7 @@ export default {
   line-height: 40px;
   background-color: #888;
   position: absolute;
-  bootom: 0;
+  bottom: 0px;
   width: 100px;
   text-align: center;
   color: #fff;

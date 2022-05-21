@@ -1,13 +1,13 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 
+
 import Users from "/pages/Users"
 import User from "/pages/User"
 import Permissions from "/pages/Permissions"
 import Product from "/pages/Product"
 import Orders from "/pages/Orders"
 import Settings from "/pages/Settings";
-import path from "path";
 
 
 Vue.use(VueRouter)
@@ -20,12 +20,12 @@ export default new VueRouter({
         },
         {
             path: "/users",
-            redirect: User,
+            redirect: Users,
         },
         {
-            path: "/users/:id",
+            path: "/user/:id",
             component: User,
-            props: true,
+            props: true
         },
         {
             path: "/permissions",
