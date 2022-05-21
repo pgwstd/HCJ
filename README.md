@@ -1,33 +1,18 @@
-# web_homework
+学习日记
+
 
 #### 介绍
-vue框架
+vue作业代码
 
-#### 软件架构
-软件架构说明
+这只是本人学习c语言的记录的一些代码
 
+还有记录了一些自己在网上找的一些作业的代码
 
-#### 安装教程
+现在还没有能力能开源的能力，上传Gitee只是监督自己学习
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+也希望以后会有自己开源的项目
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+祝自己早日成为看代码看到是内存的大神
 
 
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+                                                     好好学习，天天向上2022.2.25
