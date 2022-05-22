@@ -8,7 +8,6 @@ import Product from "/pages/Product"
 import Orders from "/pages/Orders"
 import Settings from "/pages/Settings";
 
-
 Vue.use(VueRouter)
 export default new VueRouter({
     mode: "history",
