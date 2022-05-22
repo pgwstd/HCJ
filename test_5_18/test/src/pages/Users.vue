@@ -15,7 +15,7 @@
           <td>{{item.id}}</td>
           <td>{{item.name}}</td>
           <td>{{item.age}}</td>
-          <td><a @click="userInfo(item.id)">用户信息</a></td>
+          <td><a @click="userInfo(item.id)">详情</a></td>
         </tr>
     </tbody>
     </table>

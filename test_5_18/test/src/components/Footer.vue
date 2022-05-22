@@ -14,10 +14,11 @@ export default {
   line-height: 40px;
   background-color: #888;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   color: #fff;
-  width: 100%;
+
 }
 
 </style>

@@ -17,15 +17,15 @@
 
 <script>
 import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
 import Menu from './components/Menu.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer,
-    Menu
+    Menu,
+    Footer
   }
 }
 
@@ -38,6 +38,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
 }
 .content{
   display: flex;
