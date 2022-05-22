@@ -11,8 +11,9 @@
     </div>
   </div>
   </div>
-    <Footer/>
+    <Footer />
   </div>
+
 </template>
 
 <script>
@@ -62,4 +63,5 @@ export default {
 .right{
   margin: 5px;
 }
+
 </style>

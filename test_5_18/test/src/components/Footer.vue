@@ -18,7 +18,6 @@ export default {
   width: 100%;
   text-align: center;
   color: #fff;
-
 }
 
 </style>
