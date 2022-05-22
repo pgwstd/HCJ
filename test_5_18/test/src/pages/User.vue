@@ -11,31 +11,45 @@
       </thead>
       <tbody>
       <tr v-for="item in users" :key="item.id">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.age}}</td>
+        <td>{{userInfo.id}}</td>
+        <td>{{userInfo.name}}</td>
+        <td>{{userInfo.age}}</td>
       </tr>
       </tbody>
     </table>
 <!--    设置一个按钮返回用户管理页面-->
-    <button><router-link to="/users">返回用户管理</router-link></button>
+    <input type="button" value="返回用户管理" @click="backToUsers">
   </div>
 </template>
+
 <script>
 import UserData from "../data/UserData.vue"
+
 export default{
-  name: 'User',
+  name: "User",
+  props:["id"],
   data:function (){
     return {
       users:UserData.userList
     }
-  },  /*这里的data是一个对象，不是一个数组*/
-  methods:{
-    userInfo:function (id){
-      this.$router.push("/user"+id)
-    }
-  }
+  },
+   computed:{
+     userInfo:function(){
+       let user = null
+       for (let index = 0; index < this.users.length; index++) {
+         if (this.users[index].id == this.id)
+           user = this.users[index]
+         }
+         return user
+       }
+     },
+     methods:{
+       backToUsers:function (){
+         this.$router.push("/users")
+       }
+     },
 }
+
 </script>
 <style scoped>  /*样式只能在这里用*/
 table{
@@ -50,8 +64,5 @@ td,th{
 th{
   background-color: #ddd;
 }
-button{
-  //居中
-  margin: 0 auto;
-}
+
 </style>

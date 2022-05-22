@@ -9,11 +9,13 @@
     </ul>
   </div>
 </template>
+
 <script>
 export default {
-  name: 'Menu'
+  name: "Menu"
 }
 </script>
+
 <style scoped>
 ul{
   margin: 0px;

@@ -23,8 +23,9 @@
 </template>
 <script>
 import UserData from "../data/UserData.vue"
+
 export default{
-  name: 'Users',
+  name: "Users",
   data:function (){
     return {
       users:UserData.userList
@@ -32,7 +33,7 @@ export default{
   },
   methods:{
     userInfo:function (id){
-      this.$router.push("/user"+id)
+      this.$router.push("/user/"+id)
     }
   }
 }
@@ -49,5 +50,9 @@ td,th{
 }
 th{
   background-color: #ddd;
+}
+a{
+  cursor: pointer;
+  color: #a33;
 }
 </style>

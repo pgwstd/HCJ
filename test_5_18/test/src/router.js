@@ -1,24 +1,25 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 
-import Users from "/pages/Users"
-import User from "/pages/User"
-import Permissions from "/pages/Permissions"
-import Product from "/pages/Product"
-import Orders from "/pages/Orders"
-import Settings from "/pages/Settings";
+import Users from "./pages/Users.vue"
+import User from "./pages/User.vue"
+import Permissions from "./pages/Permissions.vue"
+import Product from "./pages/Products.vue"
+import Orders from "./pages/Orders.vue"
+import Settings from "./pages/Settings.vue"
 
 Vue.use(VueRouter)
+
 export default new VueRouter({
     mode: "history",
     router: [
         {
             path: "/",
-            redirect: "/products",
+            redirect: "/products"
         },
         {
             path: "/users",
-            redirect: Users,
+            redirect: Users
         },
         {
             path: "/user/:id",
@@ -27,20 +28,20 @@ export default new VueRouter({
         },
         {
             path: "/permissions",
-            component: Permissions,
+            component: Permissions
         },
         {
             path: "/products",
-            component: Product,
+            component: Product
         },
         {
             path: "/orders",
-            component: Orders,
+            component: Orders
         },
         {
             path: "/settings",
-            component: Settings,
-        }
+            component: Settings
+        },
     ]
 })
 

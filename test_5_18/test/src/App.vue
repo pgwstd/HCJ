@@ -23,7 +23,9 @@ import Menu from './components/Menu.vue'
 export default {
   name: 'App',
   components: {
-    Header,Footer,Menu
+    Header,
+    Footer,
+    Menu
   }
 }
 
@@ -36,7 +38,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .content{
   display: flex;
@@ -59,8 +60,5 @@ export default {
 }
 .right{
   margin: 5px;
-}
-.content-main {
-  margin-top: 10px;
 }
 </style>

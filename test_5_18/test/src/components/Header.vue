@@ -3,12 +3,12 @@
 </template>
 <script>
 export default {
-  name: 'Header'
+  name: "Header"
 }
 </script>
+
 <style scoped>
 .header{
-  height: 50px;
   background-color: #545c64;
   line-height: 50px;
   text-align: center;
