@@ -18,6 +18,7 @@ export default {
   width: 100%;
   text-align: center;
   color: #fff;
+  min-height: 40px;
 }
 
 </style>

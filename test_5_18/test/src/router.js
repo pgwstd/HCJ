@@ -15,7 +15,7 @@ export default new VueRouter({
     routes:[
         {
             path: "/",
-            redirect: "/products"
+            redirect: "/users"
         },
         {
             path: "/users",
