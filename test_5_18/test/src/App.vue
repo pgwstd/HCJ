@@ -1,32 +1,31 @@
 <template>
   <div id="app">
-<Header />
+    <Header/>
     <div class="content">
       <div class="panel left">
-        <Menu />
+        <Menu/>
       </div>
       <div class="panel right">
-        <div class="panel-main">
-        <router-view />
+        <div class="content-main">
+          <router-view />
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
-    <Footer />
+    <Footer/>
   </div>
 
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Menu from './components/Menu.vue'
-import Footer from './components/Footer.vue'
+import Header from "./components/Header.vue"
+import Footer from "./components/Footer.vue"
+import Menu from "./components/Menu.vue"
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Menu,
-    Footer
+    Header, Footer, Menu
+
   }
 }
 
@@ -39,29 +38,36 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100%;
 }
-.content{
+
+.content {
   display: flex;
   position: absolute;
-  top:58px;
+  top: 58px;
   bottom: 40px;
   width: 100%;
 }
-.panel{
+
+.panel {
   flex: 1;
   height: 100%;
 }
-.left{
+
+.left {
   flex: 0 0 20%;
   background-color: #545c64;
 }
-.left a{
+
+.left a {
   color: white;
   text-decoration: none;
 }
-.right{
+
+.right {
   margin: 5px;
 }
 
+.content-main {
+  margin-top: 10px;
+}
 </style>
