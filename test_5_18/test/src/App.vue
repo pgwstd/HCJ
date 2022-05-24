@@ -60,13 +60,14 @@ export default {
 .left {
   flex: 0 0 20%;
   background-color: #545c64;
-
 }
 
 .left a{
   color: white;
   text-decoration: none;
-
+}
+.left a:hover{
+  color: red;
 }
 
 .right {

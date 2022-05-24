@@ -54,5 +54,6 @@ th{
 a{
   cursor: pointer;
   color: #a33;
+  text-decoration: none;
 }
 </style>
