@@ -1,13 +1,4 @@
-<!--<template>-->
-<!--  <div>-->
-<!--    <h3>订单管理</h3>-->
-<!--  </div>-->
-<!--</template>-->
-<!--<script>-->
-<!--export default {-->
-<!--  name: "Orders"-->
-<!--}-->
-<!--</script>-->
+
 <template>
   <div>
     <h3>订单管理</h3>
@@ -25,7 +16,7 @@
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.time}}</td>
-        <td><a href="#">详情</a></td>
+        <td><a href="#">订单详情</a></td>
       </tr>
       </tbody>
     </table>

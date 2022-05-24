@@ -15,7 +15,7 @@
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.time}}</td>
-        <td><a href="#">详情</a></td>
+        <td><a href="#">库存查询</a></td>
       </tr>
       </tbody>
     </table>
