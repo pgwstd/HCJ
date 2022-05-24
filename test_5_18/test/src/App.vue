@@ -32,6 +32,10 @@ export default {
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +47,7 @@ export default {
 .content {
   display: flex;
   position: absolute;
-  top: 58px;
+  top: 50px;
   bottom: 40px;
   width: 100%;
 }
@@ -56,11 +60,13 @@ export default {
 .left {
   flex: 0 0 20%;
   background-color: #545c64;
+
 }
 
-.left a {
+.left a{
   color: white;
   text-decoration: none;
+
 }
 
 .right {
