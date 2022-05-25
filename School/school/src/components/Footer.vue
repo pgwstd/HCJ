@@ -9,17 +9,16 @@ export default {
 </script>
 
 <style scoped>
+
 .footer{
-  height: 40px;
-  line-height: 40px;
   background-color: #888;
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 40px;
   text-align: center;
   color: #fff;
-  min-height: 40px;
-
+  line-height: 40px;
 }
 
 </style>

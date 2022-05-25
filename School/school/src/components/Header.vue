@@ -1,71 +1,84 @@
-<!--图片轮播组件-->
-<template>
- <div class="slide-content">
-   <div class="slide-view">
-     <a>
-       <img v-for="(item,index) in slideList"
-           :key="index" :src="item" v-show="n == index"
-           @mouseenter="clearGo" @mouseleave="go">
-     </a>
-     <span class="up-page" @mouseenter="clearGo"><-</span>
-     <span class="next-page" @mouseenter="clearGo">-></span>
-     <ul class="slide-index">
-       <li v-for="(v,i) in slideList" :key="i" :class="n == i ? 'active' : ''"></li>
-     </ul>
-   </div>
-   </div>
-</template>
+<!--<template>-->
+<!--  <div class="swiper">-->
+<!--    <div class="swiper-content">-->
+<!--      <div class="swiper-item" v-for="(item,index) in imageurl" :key="index">-->
+<!--        <img :src="item"/>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="page">-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--      <span></span>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</template>-->
+<!--<script>-->
+<!--export default {-->
+<!--  data () {-->
+<!--    return {-->
+<!--      imageurl:[-->
+<!--        require("../assets/1.jpg"),-->
+<!--        require("../assets/2.jpg"),-->
+<!--        require("../assets/3.jpg"),-->
+<!--        require("../assets/4.jpg"),-->
+<!--        require("../assets/5.jpg"),-->
+<!--      ],-->
+<!--    };-->
+<!--  },-->
+<!--  methods:{-->
+<!--    swiper(){-->
+<!--      new Swiper({-->
+<!--        content: '.swiper-content',-->
+<!--        swiperItem: '.swiper-item',-->
+<!--        page:"#page",-->
 
-<script>
+<!--      });-->
+<!--    }-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
+<!--<style scoped>-->
+<!--.swiper{-->
+<!--  width: 800px;-->
+<!--  height: 400px;-->
+<!--  position: relative;-->
+<!--  overflow: hidden;-->
+<!--  margin: auto;-->
+<!--}-->
+<!--.swiper-content{-->
+<!--  position: absolute;-->
+<!--  left: 0;-->
+<!--  display: flex;-->
 
-export default {
-  name: 'Header',
-  data:{
-    slideList:[
-        "./src/assets/1.jpg",
-        "./src/assets/2.jpg",
-        "./src/assets/3.jpg",
-        "./src/assets/4.jpg",
-        "./src/assets/5.jpg",
+<!--}-->
+<!--.swiper-item{-->
+<!--  height: 400px;-->
+<!--  width: 800px;-->
+<!--}-->
+<!--img{-->
+<!--  width: 100%;-->
+<!--  height: 100%;-->
+<!--}-->
+<!--.page{-->
+<!--  position: absolute;-->
+<!--   left: 50%;-->
+<!--  transform: translate(-50%,50%);-->
+<!--  bottom: 15px;-->
+<!--}-->
+<!--span{-->
+<!--  display: inline-block;-->
+<!--  width: 15px;-->
+<!--  height: 15px;-->
+<!--  border-radius: 50%;-->
+<!--  background: #fff;-->
+<!--  margin-left: 20px;-->
 
-    ],
-    n:0,
-    interId:null
-  },
-  methods:{
-    go(){ //开始改变图片
-      setInterval(()=>{
-        this.n++;
-        if(this.n>=this.slideList.length){ //如果超过最大值，就回到第一张
-          this.n=0;
-        }
-      },2000) //2秒改变一次
-    },
-    clearGo(){ //清除定时器
-      clearInterval(this.interId)
-    },
-    clickPage(str){ //点击索引
-      if (str === 'up') {
-        this.n--;
-        if (this.n < 0) {
-          this.n = this.slideList.length - 1;
-        }
-      } else if (str === 'next') {
-        this.n++;
-        if (this.n >= this.slideList.length) {
-          this.n = 0;
-        }
-      } else {
-        this.n = str;
-      }
-    }
-  },
-  mounted(){
-    this.go();
-  }
-}
+<!--}-->
+<!--</style>-->
 
-</script>
-<style scoped>
 
-</style>
+
+
+
+
