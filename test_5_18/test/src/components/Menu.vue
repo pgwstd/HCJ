@@ -2,19 +2,19 @@
   <div>
     <ul>
       <li>
-        <router-link to="/users">用户管理</router-link>
+        <router-link to="/users">课程列表</router-link>
       </li>
       <li>
-        <router-link to="/permissions">权限管理</router-link>
+        <router-link to="/permissions">课程查询</router-link>
       </li>
       <li>
-        <router-link to="/products">商品管理</router-link>
+        <router-link to="/products">成绩查询</router-link>
       </li>
       <li>
-        <router-link to="/orders">订单管理</router-link>
+        <router-link to="/orders">修改密码</router-link>
       </li>
       <li>
-        <router-link to="/settings">系统管理</router-link>
+        <router-link to="/settings">意见反馈</router-link>
       </li>
     </ul>
   </div>
@@ -37,10 +37,10 @@ ul {
 ul li {
   height: 45px;
   line-height: 45px;
-  background-color: #a0a0a0;
-  color: #fff;
+  background-color: #F7DBF0;
   cursor: pointer;
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid #fff;
+
 }
 
 </style>

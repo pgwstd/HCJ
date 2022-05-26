@@ -1,34 +1,34 @@
 <template>
   <div>
-    <h3>用户管理区域</h3>
+    <h3>课程列表详情</h3>
     <table>
       <thead>
       <tr>
-        <th>编号</th>
-        <th>姓名</th>
-        <th>年龄</th>
+        <th>课程编号</th>
+        <th>课程名</th>
+        <th>已选人数</th>
         <th>操作</th>
       </tr>
       </thead>
       <tbody>
-        <tr v-for="item in users" :key="item.id">
+        <tr v-for="item in course" :key="item.id">
           <td>{{item.id}}</td>
           <td>{{item.name}}</td>
-          <td>{{item.age}}</td>
-          <td><a @click="userInfo(item.id)">用户信息</a></td>
+          <td>{{item.count}}</td>
+          <td><a @click="userInfo(item.id)">课程详情</a></td>
         </tr>
     </tbody>
     </table>
   </div>
 </template>
 <script>
-import UserData from "../data/UserData.vue"
+import CourseData from "@/data/CourseData";
 
 export default{
-  name: "Users",
+  name: "Course",
   data:function (){
     return {
-      users:UserData.userList
+      course:CourseData.courseList
     }
   },
   methods:{

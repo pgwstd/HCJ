@@ -12,7 +12,7 @@ export default {
 .footer{
   height: 40px;
   line-height: 40px;
-  background-color: #888;
+  background-color: #BEAEE2;
   position: absolute;
   bottom: 0;
   width: 100%;

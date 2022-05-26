@@ -1,29 +1,31 @@
 <template>
   <div>
-    <h3>用户信息</h3>
+    <h3>课程信息</h3>
     <table>
       <thead>
       <tr>
         <th>编号</th>
-        <th>姓名</th>
-        <th>年龄</th>
+        <th>课程名</th>
+        <th>已选人数</th>
+        <th>状态</th>
       </tr>
       </thead>
       <tbody>
       <tr>
         <td>{{userInfo.id}}</td>
         <td>{{userInfo.name}}</td>
-        <td>{{userInfo.age}}</td>
+        <td>{{userInfo.count}}/60</td>
+        <td></td>
       </tr>
       </tbody>
     </table>
 <!--    设置一个按钮返回用户管理页面-->
-    <input type="button" value="返回用户管理" @click="backToUsers">
+    <input type="button" value="返回课程列表" @click="backToUsers">
   </div>
 </template>
 
 <script>
-import UserData from "../data/UserData.vue"
+import UserData from "../data/CourseData.vue"
 
 export default{
   name: "User",

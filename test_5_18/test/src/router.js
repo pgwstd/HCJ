@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 
-import Users from "./pages/Users"
+import Users from "./pages/Course"
 import User from "./pages/User"
 import Permissions from "./pages/Permissions"
 import Product from "./pages/Products"

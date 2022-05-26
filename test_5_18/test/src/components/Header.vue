@@ -1,5 +1,5 @@
 <template>
-   <header class="header">我的后台管理系统</header>
+   <header class="header">学生选课系统</header>
 </template>
 <script>
 export default {
@@ -9,7 +9,7 @@ export default {
 
 <style scoped>
 .header{
-  background-color: #545c64;
+  background-color: #BEAEE2;
   line-height: 50px;
   text-align: center;
   font-size: 24px;

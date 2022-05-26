@@ -3,27 +3,30 @@
     <Header/>
     <div class="content">
       <div class="panel left">
-        <Menu/>
-      </div>
-      <div class="panel right">
         <div class="content-main">
           <router-view />
         </div>
       </div>
+      <div class="panel right">
+        <Menu/>
+      </div>
+
     </div>
     <Footer/>
   </div>
-
+  <Login />
 </template>
 
 <script>
 import Header from "./components/Header.vue"
 import Footer from "./components/Footer.vue"
 import Menu from "./components/Menu.vue"
+import Login from "@/components/Login";
 
 export default {
   name: 'App',
   components: {
+    Login,
     Header, Footer, Menu
 
   }
@@ -58,20 +61,22 @@ export default {
 }
 
 .left {
-  flex: 0 0 20%;
-  background-color: #545c64;
+  margin: 5px;
+  background-color: #CDF0EA;
 }
 
-.left a{
-  color: white;
+.right a{
+  color: #2c3e50;
   text-decoration: none;
 }
-.left a:hover{
-  color: red;
+
+.right a:hover{
+  color: #F9F9F9;
 }
 
 .right {
-  margin: 5px;
+  flex: 0 0 20%;
+  background-color: #F7DBF0;
 }
 
 .content-main {
