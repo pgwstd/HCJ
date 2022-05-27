@@ -27,12 +27,13 @@
 <script>
 import UserData from "../data/CourseData.vue"
 
+
 export default{
   name: "User",
   props:["id"],
   data:function (){
     return {
-      users:UserData.userList
+      users:UserData.courseList
     }
   },
    computed:{

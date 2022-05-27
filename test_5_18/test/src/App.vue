@@ -14,19 +14,17 @@
     </div>
     <Footer/>
   </div>
-  <Login />
 </template>
 
 <script>
 import Header from "./components/Header.vue"
 import Footer from "./components/Footer.vue"
 import Menu from "./components/Menu.vue"
-import Login from "@/components/Login";
 
 export default {
   name: 'App',
   components: {
-    Login,
+
     Header, Footer, Menu
 
   }

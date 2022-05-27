@@ -15,7 +15,7 @@
           <td>{{item.id}}</td>
           <td>{{item.name}}</td>
           <td>{{item.count}}</td>
-          <td><a @click="userInfo(item.id)">课程详情</a></td>
+          <td><a @click="courseList(item.id)">课程详情</a></td>
         </tr>
     </tbody>
     </table>
@@ -32,7 +32,7 @@ export default{
     }
   },
   methods:{
-    userInfo:function (id){
+    courseList:function (id){
       this.$router.push("/user/"+id)
     }
   }
