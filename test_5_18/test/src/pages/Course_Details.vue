@@ -25,30 +25,31 @@
 </template>
 
 <script>
-import UserData from "../data/CourseData.vue"
+
+import CourseData from "@/data/CourseData";
 
 
 export default{
-  name: "User",
+  name: "Course_Details",
   props:["id"],
   data:function (){
     return {
-      users:UserData.courseList
+      course:CourseData.courseList
     }
   },
    computed:{
      userInfo:function(){
        let user = null
-       for (let index = 0; index < this.users.length; index++) {
-         if (this.users[index].id == this.id)
-           user = this.users[index]
+       for (let index = 0; index < this.course.length; index++) {
+         if (this.course[index].id == this.id)
+           user = this.course[index]
          }
          return user
        }
      },
      methods:{
        backToUsers:function (){
-         this.$router.push("/users")
+         this.$router.push("/Course")
        }
      },
 }

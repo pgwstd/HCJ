@@ -1,21 +1,19 @@
 <template>
   <div>
-    <h3>权限管理</h3>
+    <h3>已经选课程</h3>
     <table>
       <thead>
       <tr>
-        <th>帐号</th>
-        <th>姓名</th>
-        <th>入网时长</th>
-        <th>操作</th>
+        <th>课程编号</th>
+        <th>课和名</th>
+        <th>上课时间</th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="item in users" :key="item.id">
+      <tr v-for="item in course" :key="item.id">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.age}}</td>
-        <td><a href="#">修改权限</a></td>
       </tr>
       </tbody>
     </table>
@@ -28,7 +26,7 @@ export default{
   name: "Permissions",
   data:function (){
     return {
-      users:UserData.permissionsList
+      course:UserData.permissionsList
     }
   },
 }

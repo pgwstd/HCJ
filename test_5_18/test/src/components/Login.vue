@@ -3,70 +3,50 @@
   <div class="container">
     <h1>学生选课系统</h1>
     <div class="from">
-      <input type="text" placeholder="您的账号">
-      <input type="password" placeholder="您的密码">
-      <button class="btn-login">登录</button>
+      <input type="text" placeholder="您的账号" v-model="form.id">
+      <input type="password" placeholder="您的密码" v-model="form.pwd">
+      <button class="btn-login" @click="login">登录</button>
     </div>
   </div>
+    <ul class="bg-squares">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
-  <ul class="bg-squares">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+
 </template>
 
 <script>
   export default {
     name: "Login",
     // 要操作的元素: ".container",".btn-login"
-    el: ".container",
     data() {
       return {
-        // 初始化数据
-        msg: "潘光伟"
-      };
-    },
-    methods: {
-      // 定义方法
-      login() {
-        // 获取输入的账号和密码
-        let username = this.$refs.username.value;
-        let password = this.$refs.password.value;
-        // 发送ajax请求
-        this.$http
-          .post("http://localhost:8080/login", {
-            username,
-            password
-          })
-          .then(res => {
-            // 请求成功
-            console.log(res);
-            // 判断是否登录成功
-            if (res.data.code === 1) {
-              // 登录成功
-              // 将用户信息存储到本地
-              localStorage.setItem("userInfo", JSON.stringify(res.data.data));
-              // 跳转到首页
-              this.$router.push("/");
-            } else {
-              // 登录失败
-              alert(res.data.msg);
-            }
-          })
-          .catch(err => {
-            // 请求失败
-            console.log(err);
-          });
+        form: {
+          id: '110',
+          pwd: '123456'
+        }
       }
     },
+    methods: {
+      login(){
+        //如果帐号是张三密码是123456就路由跳转到首页
+        if(this.form.id == '110' && this.form.pwd == '123456'){
+          this.$router.push('/Home');
+        }else{
+          alert('账号或密码错误!');
+        }
+      },
+
+    }
 
   }
 </script>rpt>
@@ -94,7 +74,7 @@
   color: #fff;
 }
 .container h1{
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 100;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -118,7 +98,7 @@
   width: 250px;
   padding: 10px 15px;
   border-radius: 3px;
-  magin:0 auto 10px auto;
+  margin:0 auto 10px auto;
   text-align: center;
   color: #fff;
   font-size: 15px;

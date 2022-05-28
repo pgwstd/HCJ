@@ -2,19 +2,22 @@
   <div>
     <ul>
       <li>
-        <router-link to="/users">课程列表</router-link>
+        <router-link to="/Course" class="el-icon-s-management">课程信息</router-link>
       </li>
       <li>
-        <router-link to="/permissions">课程查询</router-link>
+        <router-link to="/permissions" class="el-icon-circle-plus">选课情况</router-link>
       </li>
       <li>
-        <router-link to="/products">成绩查询</router-link>
+        <router-link to="/products" class="el-icon-bank-card">成绩查询</router-link>
       </li>
       <li>
-        <router-link to="/orders">修改密码</router-link>
+        <router-link to="/orders" class="el-icon-s-data">学分情况</router-link>
       </li>
       <li>
-        <router-link to="/settings">意见反馈</router-link>
+        <router-link to="/settings" class="el-icon-menu">修改密码</router-link>
+      </li>
+      <li>
+        <router-link to="/" class="el-icon-remove">退出系统</router-link>
       </li>
     </ul>
   </div>
@@ -22,7 +25,8 @@
 
 <script>
 export default {
-  name: "Menu"
+  name: "Menu",
+
 }
 
 </script>
