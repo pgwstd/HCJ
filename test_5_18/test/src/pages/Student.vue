@@ -1,6 +1,10 @@
+<!--学生端-->
 <template>
   <div id="app">
     <Header/>
+    <div class="student">
+      <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>李雷
+    </div>
     <div class="content">
       <div class="panel left">
         <div class="content-main">
@@ -13,22 +17,22 @@
 
     </div>
     <Footer/>
-    <!--    <Login/>-->
+
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue"
-import Footer from "@/components/Footer.vue"
-import Menu from "@/components/Menu.vue"
+import Header from "@/components/Header.vue"  //引入头部组件
+import Footer from "@/components/Footer.vue" //引入底部组件
+import Menu from "@/components/Menu.vue" //引入菜单组件
 
 export default {
-  name: 'Home',
+  name: 'Student',
   components: {
-
-    Header, Footer, Menu
-
+    Header, Footer, Menu //引入组件
   },
+
+
 }
 
 </script>
@@ -72,5 +76,10 @@ export default {
 
 .content-main {
   margin-top: 10px;
+}
+.student{
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
 </style>

@@ -1,32 +1,37 @@
+<!--学生端学分情况-->
 <template>
   <div>
-    <h3>已经选课程</h3>
+    <!--    定义表格框架-->
     <table>
       <thead>
       <tr>
-        <th>课程编号</th>
-        <th>课和名</th>
-        <th>上课时间</th>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>完成学分</th>
+        <th>均绩</th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="item in course" :key="item.id">
+      <!--      遍历数组内容-->
+      <tr v-for="item in credit" >
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
-        <td>{{item.age}}</td>
+        <td>{{item.completecredits}}</td>
+        <td>{{item.averagegrade}}</td>
       </tr>
       </tbody>
     </table>
+
   </div>
 </template>
 <script>
-import UserData from "../data/PermissionsData"
+import CreditData from "../data/CreditData" //引入数据
 
 export default{
-  name: "Permissions",
+  name: "Credit",
   data:function (){
     return {
-      course:UserData.permissionsList
+      credit:CreditData.creditList  //学生学分情况数据
     }
   },
 }

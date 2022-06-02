@@ -1,23 +1,25 @@
+<!--网页菜单栏组件-->
 <template>
   <div>
     <ul>
       <li>
-        <router-link to="/Course" class="el-icon-s-management">课程信息</router-link>
+<!--        路由连接跳转-->
+        <router-link to="/Course" class="el-icon-s-management">课程信息</router-link>  <!--跳转到课程信息页面-->
       </li>
       <li>
-        <router-link to="/permissions" class="el-icon-circle-plus">选课情况</router-link>
+        <router-link to="/Already_course" class="el-icon-circle-plus">选课情况</router-link> <!--跳转到选课情况页面-->
       </li>
       <li>
-        <router-link to="/products" class="el-icon-bank-card">成绩查询</router-link>
+        <router-link to="/Score" class="el-icon-bank-card">成绩查询</router-link> <!--跳转到成绩查询页面-->
       </li>
       <li>
-        <router-link to="/orders" class="el-icon-s-data">学分情况</router-link>
+        <router-link to="/Credit" class="el-icon-s-data">学分情况</router-link> <!--跳转到学分情况页面-->
       </li>
       <li>
-        <router-link to="/settings" class="el-icon-menu">修改密码</router-link>
+        <router-link to="/Password" class="el-icon-menu">修改密码</router-link> <!--跳转到修改密码页面-->
       </li>
       <li>
-        <router-link to="/" class="el-icon-remove">退出系统</router-link>
+        <router-link to="/" class="el-icon-remove">退出系统</router-link> <!--跳转到登录页面-->
       </li>
     </ul>
   </div>

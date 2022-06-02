@@ -1,3 +1,4 @@
+<!--网页头部标签组件-->
 <template>
    <header class="header">学生选课系统</header>
 </template>

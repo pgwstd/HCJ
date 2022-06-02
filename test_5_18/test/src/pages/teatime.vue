@@ -1,6 +1,7 @@
-<!--学生端课程信息-->
+<!--老师端课程安排-->
 <template>
-  <div>
+  <div class="tp">
+
     <div class="course-header">
       <!--    请输入关键字搜索课程-->
       <el-input
@@ -10,31 +11,26 @@
       <el-button type="primary" icon="el-icon-search" @click="sceach">搜索</el-button>
       <el-button type="primary" icon="el-icon-delete" @click="reaset">重置</el-button>
     </div>
-    <!--    定义表格框架-->
+    <!--     表格框架定义-->
     <table>
       <thead>
       <tr>
-        <th>课号</th>
-        <th>课名</th>
-        <th>学分</th>
-        <th>学时</th>
-        <th>院系</th>
-        <th>操作</th>
+        <th>班级</th>
+        <th>班级人数</th>
+        <th>地点</th>
+        <th>时间</th>
       </tr>
       </thead>
       <tbody>
       <!--      遍历数组内容-->
-      <tr v-for="item in course" :key="item.id">
-        <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.credit }}</td>
-        <td>{{ item.hours }}</td>
-        <td>{{ item.Faculty }}</td>
-        <td><a @click="courseInfo(item.id)">课程详情</a></td>
+      <tr v-for="item in teatime" :key="item.id">
+        <td>{{ item.className }}</td>
+        <td>{{ item.people }}</td>
+        <td>{{ item.Place }}</td>
+        <td>{{ item.time }}</td>
       </tr>
       </tbody>
     </table>
-
     <!--    分页功能定义-->
     <pageGinaTiion
         :totalLength="total"
@@ -49,41 +45,40 @@
 
 </template>
 <script>
-import CourseData from "@/data/CourseData"; //引入数据
-import pageGinaTiion from "@/components/pageGinaTiion"; //引入翻页组件
+
+import pageGinaTiion from "@/components/pageGinaTiion";   //引入翻页组件
+import timeData from "@/data/timeData"; //引入数据
 
 export default {
-  name: "Course",
+  name: "teatime",
   components: {
     pageGinaTiion //引入翻页组件
   },
   data: function () {
     return {
       //input声明一个变量让它存放数据
-      input: "",
-      table: "",
+      input: "",  //搜索框
+      table: "",  //表格
       //表格数据
-      course: [], //课程数据
+      teatime: [],  //表格数据
       //表格分布功能
-      total: CourseData.courseList.length,  //总条数
+      total: timeData.timeList.length,  //总数据
       //原始数组
-      tableList:CourseData.courseList,  //原始数组
-      pageSize:10 //每页显示条数
+      tableList: timeData.timeList, //原始数组
+      pageSize: 10  //每页显示数据
     }
   },
   created() {
-    this.course = CourseData.courseList.slice(0, 10)  //初始化数据
+    this.teatime = timeData.timeList.slice(0, 10) //初始化数据
   },
   methods: {
-    handemit(data){
-      this.course = data    //更新数据
+    handemit(data) {
+      this.teatime = data   //更新数据
     },
-    handleSizeEmit(data){
-      this.course = data  //更新数据
+    handleSizeEmit(data) {
+      this.teatime = data   //更新数据
     },
-    courseInfo: function (id) {
-      this.$router.push("/Course_Details/" + id)  //跳转到课程详情页面
-    },
+
     //搜索input里面的内容如果有符合的内容就单独显示出来，没有就弹出提示
     sceach: function () {
       if (this.input === "") {  //如果input为空就弹出提示
@@ -92,24 +87,29 @@ export default {
           type: "warning"
         })
       } else {
-        this.course = CourseData.courseList.filter(function (item) {  //过滤出符合条件的数据
+        this.teatime = timeData.timeList.filter(function (item) {  //过滤出符合条件的数据
           return item.name.indexOf(this.input) != -1  //返回true
-        }.bind(this)) //绑定this
+        }.bind(this))
       }
     },
-     // 强制更新搜索框的值，防止搜索框的值为空但是显示有内容
-    changeMessage() {
+    // 强制更新搜索框的值
+    changeMessage() { //搜索框的值改变时触发
       this.$forceUpdate() //强制更新
     },
     //清空input搜索框
     reaset: function () {
-      this.input = "";
-      this.course = CourseData.courseList   //更新数据
+      this.input = ""; //清空input框
+      this.teatime = timeData.timeList  //更新数据
     },
   }
 }
 </script>
 <style scoped>  /*样式只能在这里用*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

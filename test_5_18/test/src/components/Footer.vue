@@ -1,3 +1,4 @@
+<!--网页底部标签组件-->
 <template>
   <footer class="footer">Copyright &copy; 2022 pgwstr 版权所有.</footer>
 </template>
