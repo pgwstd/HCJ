@@ -8,7 +8,8 @@
     </el-row>
     <el-row>
       <el-col :span='4' class='leftNav'>
-        <el-menu router=true default-active="2" class="el-menu-vertical-demo" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+        <el-menu router=true default-active="2" class="el-menu-vertical-demo" background-color="#545c64"
+                 text-color="#fff" active-text-color="#ffd04b">
           <!--  -->
           <el-submenu index="/student">
             <template slot="title"><i class="el-icon-message"></i>
@@ -57,38 +58,43 @@
 
 <script>
 import $ from 'jquery'
+
 export default {
   name: 'app', // el:'#app'
-  data:function(){
+  data: function () {
     return {
-      title:'Hello World'
+      title: 'Hello World'
     }
   },
-  mounted:function(){
-    $('.leftNav').height($(window).height()-48);
+  mounted: function () {
+    $('.leftNav').height($(window).height() - 48);
   }
 }
 </script>
 
 <style>
-body{
+body {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
-.header{
+
+.header {
   background-color: #1f2d3d;
   color: #FFF;
 }
-.header .title{
+
+.header .title {
   height: 48px;
   line-height: 48px;
   text-align: center;
   font-size: 18px;
 }
-.leftNav{
+
+.leftNav {
   background-color: #48576a;
 }
-.container{
+
+.container {
   padding: 10px;
 }
 </style>
