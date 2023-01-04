@@ -1,12 +1,12 @@
 /*
-   @author pgwstr
-   @date 2022/7/29 11:06 PM
- */
+@author pgwstr
+@date 2022/7/29 11:06 PM
+*/
 <!--学生端选课情况-->
 
 <template>
   <div>
-<!--    定义表格框架-->
+    <!--    定义表格框架-->
     <table>
       <thead>
       <tr>
@@ -19,7 +19,7 @@
       </tr>
       </thead>
       <tbody>
-<!--      遍历数组内容-->
+      <!--      遍历数组内容-->
       <tr v-for="item in alreadycourse" :key="item.id">
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
@@ -30,7 +30,7 @@
       </tr>
       </tbody>
     </table>
-<!--    页面翻页功能-->
+    <!--    页面翻页功能-->
     <pageGinaTiion
         :totalLength="total"
         :pages="[5, 10]"
@@ -50,7 +50,7 @@ import pageGinaTiion from "@/components/pageGinaTiion"; //引入翻页组件
 
 export default {
   name: "Already_course",
-  components:{
+  components: {
     pageGinaTiion //引入翻页组件
   },
   data: function () {
@@ -59,7 +59,7 @@ export default {
       alreadycourse: [],  //已选课数据
       //表格分布功能
       total: AlreadycourseData.AlreadycourseList.length,  //总条数
-      tableList:AlreadycourseData.AlreadycourseList,  //表格数据
+      tableList: AlreadycourseData.AlreadycourseList,  //表格数据
       pageSize: 10, //每页显示条数
     }
   },

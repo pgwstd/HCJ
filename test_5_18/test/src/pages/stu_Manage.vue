@@ -61,18 +61,18 @@ export default {
       //表格分布功能
       total: Table_stu.stuList.length,  //总条数
       //原始数组
-      tableList:Table_stu.stuList,  //原始数组
-      pageSize:10 //每页显示条数
+      tableList: Table_stu.stuList,  //原始数组
+      pageSize: 10 //每页显示条数
     }
   },
   created() { //页面创建完成
     this.stu_Manage = Table_stu.stuList.slice(0, 10)  //初始化数据
   },
   methods: {
-    handemit(data){
+    handemit(data) {
       this.stu_Manage = data  //更新数据
     },
-    handleSizeEmit(data){
+    handleSizeEmit(data) {
       this.stu_Manage = data //更新数据
     },
 
@@ -102,10 +102,11 @@ export default {
 }
 </script>
 <style scoped>  /*样式只能在这里用*/
-*{
+* {
   margin: 0;
   padding: 0;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;

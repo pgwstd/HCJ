@@ -10,7 +10,7 @@
       <el-button type="primary" icon="el-icon-search" @click="sceach">搜索</el-button>
       <el-button type="primary" icon="el-icon-delete" @click="reaset">重置</el-button>
     </div>
-<!--     表格框架定义-->
+    <!--     表格框架定义-->
     <table>
       <thead>
       <tr>
@@ -32,17 +32,17 @@
       </tr>
       </tbody>
     </table>
-<!--     分页功能定义-->
-        <pageGinaTiion
-            :totalLength="total"
-            :pages="[5, 10]"
-            :page-size="pageSize"
-            :tableList="tableList"
-            @handleCurrentEmit="handemit"
-            @handleSizeEmit="handleSizeEmit"
-        >
+    <!--     分页功能定义-->
+    <pageGinaTiion
+        :totalLength="total"
+        :pages="[5, 10]"
+        :page-size="pageSize"
+        :tableList="tableList"
+        @handleCurrentEmit="handemit"
+        @handleSizeEmit="handleSizeEmit"
+    >
 
-        </pageGinaTiion>
+    </pageGinaTiion>
   </div>
 
 </template>
@@ -64,21 +64,21 @@ export default {
       //表格数据
       stu_Manage: [], //学生管理
       //表格分布功能
-      total: statisticsData .length,  //总条数
+      total: statisticsData.length,  //总条数
       //原始数组
-      tableList:statisticsData .statiscsList, //表格数据
-      pageSize:10 //每页显示条数
+      tableList: statisticsData.statiscsList, //表格数据
+      pageSize: 10 //每页显示条数
     }
   },
   created() {
-    this.Statistics = statisticsData .statiscsList.slice(0, 10) //初始化数据
+    this.Statistics = statisticsData.statiscsList.slice(0, 10) //初始化数据
   },
   methods: {
-    handemit(data){
+    handemit(data) {
       this.Statistics = data  //更新数据
     },
-    handleSizeEmit(data){
-      this.Statistics= data   //更新数据
+    handleSizeEmit(data) {
+      this.Statistics = data   //更新数据
     },
 
     //搜索input里面的内容如果有符合的内容就单独显示出来，没有就弹出提示
@@ -89,7 +89,7 @@ export default {
           type: "warning"
         })
       } else {
-        this.Statistics = statisticsData .statiscsList.filter(function (item) {  //过滤出符合条件的数据
+        this.Statistics = statisticsData.statiscsList.filter(function (item) {  //过滤出符合条件的数据
           return item.name.indexOf(this.input) != -1  //返回true
         }.bind(this))
       }
@@ -101,16 +101,17 @@ export default {
     //清空input搜索框
     reaset: function () { //清空搜索框
       this.input = "";  //清空搜索框
-      this.Statistics = statisticsData .statiscsList //更新数据
+      this.Statistics = statisticsData.statiscsList //更新数据
     },
   }
 }
 </script>
 <style scoped>  /*样式只能在这里用*/
-*{
+* {
   margin: 0;
   padding: 0;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;

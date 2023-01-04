@@ -67,18 +67,18 @@ export default {
       //表格分布功能
       total: CourseData.courseList.length,  //总条数
       //原始数组
-      tableList:CourseData.courseList,  //原始数组
-      pageSize:10 //每页显示条数
+      tableList: CourseData.courseList,  //原始数组
+      pageSize: 10 //每页显示条数
     }
   },
   created() {
     this.course = CourseData.courseList.slice(0, 10)  //初始化数据
   },
   methods: {
-    handemit(data){
+    handemit(data) {
       this.course = data    //更新数据
     },
-    handleSizeEmit(data){
+    handleSizeEmit(data) {
       this.course = data  //更新数据
     },
     courseInfo: function (id) {
@@ -97,7 +97,7 @@ export default {
         }.bind(this)) //绑定this
       }
     },
-     // 强制更新搜索框的值，防止搜索框的值为空但是显示有内容
+    // 强制更新搜索框的值，防止搜索框的值为空但是显示有内容
     changeMessage() {
       this.$forceUpdate() //强制更新
     },

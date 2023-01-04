@@ -5,12 +5,12 @@
 
 <script>
 export default {
-    name: "Footer"
-  }
+  name: "Footer"
+}
 </script>
 
 <style scoped>
-.footer{
+.footer {
   height: 40px;
   line-height: 40px;
   background-color: #BEAEE2;

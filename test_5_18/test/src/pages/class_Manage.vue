@@ -11,7 +11,7 @@
       <el-button type="primary" icon="el-icon-delete" @click="reaset">重置</el-button>
     </div>
 
-<!--    定义表格框架-->
+    <!--    定义表格框架-->
     <table>
       <thead>
       <tr>
@@ -26,22 +26,22 @@
       <tr v-for="item in class_Manage" :key="item.id">
         <td>{{ item.className }}</td>
         <td>{{ item.people }}</td>
-        <td>{{ item.man}}</td>
-        <td>{{ item.woman}}</td>
+        <td>{{ item.man }}</td>
+        <td>{{ item.woman }}</td>
       </tr>
       </tbody>
     </table>
-<!--    分页功能定义-->
-        <pageGinaTiion
-            :totalLength="total"
-            :pages="[5, 10]"
-            :page-size="pageSize"
-            :tableList="tableList"
-            @handleCurrentEmit="handemit"
-            @handleSizeEmit="handleSizeEmit"
-        >
+    <!--    分页功能定义-->
+    <pageGinaTiion
+        :totalLength="total"
+        :pages="[5, 10]"
+        :page-size="pageSize"
+        :tableList="tableList"
+        @handleCurrentEmit="handemit"
+        @handleSizeEmit="handleSizeEmit"
+    >
 
-        </pageGinaTiion>
+    </pageGinaTiion>
   </div>
 
 </template>
@@ -64,18 +64,18 @@ export default {
       //表格分布功能
       total: Table_classData.classList.length,  //总条数
       //原始数组
-      tableList:Table_classData. classList, //表格数据
-      pageSize:10 //每页显示条数
+      tableList: Table_classData.classList, //表格数据
+      pageSize: 10 //每页显示条数
     }
   },
   created() {
-    this.class_Manage = Table_classData. classList.slice(0, 10) //初始化数据
+    this.class_Manage = Table_classData.classList.slice(0, 10) //初始化数据
   },
   methods: {
-    handemit(data){
+    handemit(data) {
       this.class_Manage = data  //接收翻页组件传递的数据
     },
-    handleSizeEmit(data){
+    handleSizeEmit(data) {
       this.class_Manage = data  //接收翻页组件传递的数据
     },
 
@@ -87,7 +87,7 @@ export default {
           type: "warning"
         })
       } else {
-        this.class_Manage = Table_classData. classList.filter(function (item) {  //过滤出符合条件的数据
+        this.class_Manage = Table_classData.classList.filter(function (item) {  //过滤出符合条件的数据
           return item.name.indexOf(this.input) != -1  //返回true
         }.bind(this))
       }
@@ -99,16 +99,17 @@ export default {
     //清空input搜索框
     reaset: function () {
       this.input = "";
-      this.class_Manage = Table_classData. classList
+      this.class_Manage = Table_classData.classList
     },
   }
 }
 </script>
 <style scoped>  /*样式只能在这里用*/
-*{
+* {
   margin: 0;
   padding: 0;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;

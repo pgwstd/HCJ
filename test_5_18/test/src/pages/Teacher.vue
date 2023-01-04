@@ -32,7 +32,7 @@
             <i class="el-icon-message-solid"></i>
             <span @click="Statistics">数据统计</span>
           </el-menu-item>
-          <el-menu-item >
+          <el-menu-item>
             <i class="el-icon-remove"></i>
             <span slot="title" @click="quit">退出系统</span>
           </el-menu-item>

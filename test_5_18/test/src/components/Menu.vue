@@ -3,7 +3,7 @@
   <div>
     <ul>
       <li>
-<!--        路由连接跳转-->
+        <!--        路由连接跳转-->
         <router-link to="/Course" class="el-icon-s-management">课程信息</router-link>  <!--跳转到课程信息页面-->
       </li>
       <li>

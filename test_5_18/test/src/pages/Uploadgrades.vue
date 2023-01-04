@@ -3,7 +3,7 @@
   <div>
     <div class="course-header">
       <!--    请输入关键字搜索课程-->
-<!--      用v-model显示值和实时更新值-->
+      <!--      用v-model显示值和实时更新值-->
       <el-input
           v-model="input" @input="changeMessage($event)" placeholder="请输入关键字搜索"
           style="padding:0 15px; width: 250px; height: 20px"
@@ -64,18 +64,18 @@ export default {
       //表格分布功能
       total: uploadData.uploadList.length,  //总条数
       //原始数组
-      tableList:uploadData.uploadList,  //表格数据
-      pageSize:10 //每页显示条数
+      tableList: uploadData.uploadList,  //表格数据
+      pageSize: 10 //每页显示条数
     }
   },
   created() {
     this.course = uploadData.uploadList.slice(0, 10)  //初始化表格数据
   },
   methods: {
-    handemit(data){  //翻页功能
+    handemit(data) {  //翻页功能
       this.uploadgrades = data //更新数据
     },
-    handleSizeEmit(data){ //每页显示条数
+    handleSizeEmit(data) { //每页显示条数
       this.uploadgrades = data //更新数据
     },
 

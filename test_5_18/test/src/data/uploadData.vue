@@ -1,7 +1,7 @@
 <!--老师端上传成绩要用的数据表-->
 <script>
 export default {
-  uploadList:[
+  uploadList: [
     {id: 110, name: "李雷", class: "软件工程1601"},
     {id: 111, name: "王芳", class: "软件工程1601"},
     {id: 112, name: "张明", class: "软件工程1601"},
