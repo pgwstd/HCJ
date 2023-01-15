@@ -71,45 +71,45 @@
     // console.log(a != b);
     // console.log(a != 10);
 
-  /*  var score = prompt("请输入成绩:");
-    if (score < 0 || score > 100 || isNaN(score)){
-        alert("输入不合法");
-    }else {
-        if (score == 100) {
-            alert("奖励一辆BMW");
-        } else if (score >= 80 && score < 100) {
-            alert("奖励一台苹果手机");
-        } else if (score >= 60 && score < 80) {
-            alert("奖励一本参考书");
-        } else {
-            alert("没有奖励");
-        }
-    }*/
+    /*  var score = prompt("请输入成绩:");
+      if (score < 0 || score > 100 || isNaN(score)){
+          alert("输入不合法");
+      }else {
+          if (score == 100) {
+              alert("奖励一辆BMW");
+          } else if (score >= 80 && score < 100) {
+              alert("奖励一台苹果手机");
+          } else if (score >= 60 && score < 80) {
+              alert("奖励一本参考书");
+          } else {
+              alert("没有奖励");
+          }
+      }*/
 
     //比较三个数的大小，然后从大到小排序
-   /* var num1 = +prompt("请输入第一个数");  //用+转换成number
-    var num2 = +prompt("请输入第二个数");
-    var num3 = +prompt("请输入第三个数");
+    /* var num1 = +prompt("请输入第一个数");  //用+转换成number
+     var num2 = +prompt("请输入第二个数");
+     var num3 = +prompt("请输入第三个数");
 
-    if (num1 > num2 && num1 > num3){
-        if (num2 > num3){
-            alert(num1 + "," + num2 + "," + num3);
-        }else{
-            alert(num1 + "," + num3 + "," + num2);
-        }
-    }else if (num2 > num1 && num2 > num3){
-        if (num1 > num3){
-            alert(num2 + "," + num1 + "," + num3);
-        }else{
-            alert(num2 + "," + num3 + "," + num1);
-        }
-    }else{
-        if (num1 > num2){
-            alert(num3 + "," + num1 + "," + num2);
-        }else{
-            alert(num3 + "," + num2 + "," + num1);
-        }
-    }*/
+     if (num1 > num2 && num1 > num3){
+         if (num2 > num3){
+             alert(num1 + "," + num2 + "," + num3);
+         }else{
+             alert(num1 + "," + num3 + "," + num2);
+         }
+     }else if (num2 > num1 && num2 > num3){
+         if (num1 > num3){
+             alert(num2 + "," + num1 + "," + num3);
+         }else{
+             alert(num2 + "," + num3 + "," + num1);
+         }
+     }else{
+         if (num1 > num2){
+             alert(num3 + "," + num1 + "," + num2);
+         }else{
+             alert(num3 + "," + num2 + "," + num1);
+         }
+     }*/
 
     /*var input  = +prompt("请输入日期:");
         switch (input) {
@@ -138,18 +138,41 @@
                 alert("没有这个日期");
         }*/
 
-  /*  var money = 1000;
+    /*  var money = 1000;
+      var count = 0;
+      while (money < 5000){
+          money *= 1.05;
+          count++;
+      }
+      console.log(count);*/
+    /*    var sum = 0;
+        for (var i = 1;i <= 100; i += 2){
+            sum += i;
+        }
+        console.log(sum);*/
+
+  /*  var sum = 0;
     var count = 0;
-    while (money < 5000){
-        money *= 1.05;
-        count++;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 7 == 0) {
+            sum += i;
+            count++;
+        }
     }
-    console.log(count);*/
-    var sum = 0;
-    for (var i = 1;i <= 100; i += 2){
-        sum += i;
+    console.log("1-100之间7的倍数有:" + count + "个" + "它们的和是:" + sum);*/
+
+    var units = 0;//个位
+    var hund = 0;//十位
+    var kilo = 0;//百位
+    for (var i = 100; i < 1000;i++){
+        units = parseInt(i % 10);
+        hund = parseInt(i / 10 % 10);
+        kilo = parseInt(i / 100);
+        if (i == ((units * units * units) + (hund * hund * hund) + (kilo * kilo * kilo))){
+            console.log(i);
+        }
     }
-    console.log(sum);
+
 </script>
 
 </body>
