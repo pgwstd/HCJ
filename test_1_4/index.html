@@ -207,23 +207,42 @@
                document.write("<br/>");
            }*/
 
-    /*    for (var i = 1; i <= 9; i++) {
-            for (var j = 1; j <= i; j++) {
-                document.write("<span>" + i + "*" + j + "=" + i * j + "</span>");
+        /*    for (var i = 1; i <= 9; i++) {
+                for (var j = 1; j <= i; j++) {
+                    document.write("<span>" + i + "*" + j + "=" + i * j + "</span>");
+                }
+                //换行
+                document.write("<br />");
+            }*/
+
+
+        /*   for (var i = 1; i <= 5; i++) {
+
+               if (i == 2) {
+                   // break;
+                   continue;
+               }
+               console.log(i);
+           }*/
+
+        console.time("test");
+        var input = 10000;
+        for (var i = 2; i < input; i++) {
+            var flag = true;
+            for (var j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
             }
-            //换行
-            document.write("<br />");
-        }*/
-
-
-        for (var i = 1; i <= 5;i++){
-
-            if (i == 2){
-                // break;
-                continue;
+            if (flag) {
+                console.log(i + "是质数");
+            } else {
+                console.log(i + "不是质数");
             }
-            console.log(i);
         }
+        console.timeEnd("test");
+
     </script>
     <style type="text/css">
         body {
