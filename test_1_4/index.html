@@ -161,7 +161,7 @@
     }
     console.log("1-100之间7的倍数有:" + count + "个" + "它们的和是:" + sum);*/
 
-    var units = 0;//个位
+/*    var units = 0;//个位
     var hund = 0;//十位
     var kilo = 0;//百位
     for (var i = 100; i < 1000;i++){
@@ -170,6 +170,23 @@
         kilo = parseInt(i / 100);
         if (i == ((units * units * units) + (hund * hund * hund) + (kilo * kilo * kilo))){
             console.log(i);
+        }
+    }*/
+
+    var input = prompt("请输入一个大于1的数:");
+    var flag = true;
+    if (input <= 1){
+        alert("输入不合法");
+    }else{
+        for (var i = 2;i < input ;i++){
+            if (input % i == 0){
+                flag = false;
+            }
+        }
+        if (flag){
+            alert(input + "是质数");
+        }else{
+            alert(input + "不是质数");
         }
     }
 
