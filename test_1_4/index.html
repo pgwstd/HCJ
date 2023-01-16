@@ -3,194 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
+
+    <script type="text/javascript">
+        // alert("你好");
+        // document.write("你好呀");
+        // console.log("你好不好");
+        // var str = "hello";
+        // str = "123"
+        // console.log(str);
+        // alert(str);
+        // document.write(str);
+        // console.log("hello")
+        // var a = 123;
+        // var b = "123";
+        // var c = "abc" * "bcd";
+        // console.log(c);
+        // console.log(typeof a);
+        // console.log(typeof b);
+        // console.log(typeof NaN);
+        // console.log(Number.MIN_VALUE);
+        // console.log(Number.MAX_VALUE);
+        // var bool = false;
+        // console.log(bool);
+        // console.log(typeof bool);
+        // var a = null;
+        // var b;
+        // console.log(a);
+        // console.log(b);
+        // console.log(typeof a);
+        // console.log(typeof b);
+        // const a = 123;
+        // const b = a.toString();
+        // const cc = "123";
+        // const c =Number(cc);
+        // const d =String(cc);
+        // console.log(typeof a);
+        // console.log(typeof b);
+        // console.log(typeof c);
+        // var a = 1;
+        // result = a + 1;
+        // console.log(result);
+        // document.write(result);
+        // alert(result);
+        // var result = true + "hello";
+        // console.log(result);
+        // var c = 123;
+        // console.log("c = " + c);
+        // let a = 1;
+        // let b = 1;
+        // let c = 0;
+        // c = a + 1;
+        // b++;
+        // a++;
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+
+        // var result;
+        // result = 2 && 5;
+        // result = 0 && 2;
+        // result = 0 || 2;
+        // result = 2 || 0;
+        // console.log(result);
+        // var a = 10;
+        // var b = 20;
+        // console.log(a != b);
+        // console.log(a != 10);
+
+        /*  var score = prompt("请输入成绩:");
+          if (score < 0 || score > 100 || isNaN(score)){
+              alert("输入不合法");
+          }else {
+              if (score == 100) {
+                  alert("奖励一辆BMW");
+              } else if (score >= 80 && score < 100) {
+                  alert("奖励一台苹果手机");
+              } else if (score >= 60 && score < 80) {
+                  alert("奖励一本参考书");
+              } else {
+                  alert("没有奖励");
+              }
+          }*/
+
+        //比较三个数的大小，然后从大到小排序
+        /* var num1 = +prompt("请输入第一个数");  //用+转换成number
+         var num2 = +prompt("请输入第二个数");
+         var num3 = +prompt("请输入第三个数");
+
+         if (num1 > num2 && num1 > num3){
+             if (num2 > num3){
+                 alert(num1 + "," + num2 + "," + num3);
+             }else{
+                 alert(num1 + "," + num3 + "," + num2);
+             }
+         }else if (num2 > num1 && num2 > num3){
+             if (num1 > num3){
+                 alert(num2 + "," + num1 + "," + num3);
+             }else{
+                 alert(num2 + "," + num3 + "," + num1);
+             }
+         }else{
+             if (num1 > num2){
+                 alert(num3 + "," + num1 + "," + num2);
+             }else{
+                 alert(num3 + "," + num2 + "," + num1);
+             }
+         }*/
+
+        /*var input  = +prompt("请输入日期:");
+            switch (input) {
+                case 1:
+                    alert("星期一");
+                    break;
+                case 2:
+                    alert("星期二");
+                    break;
+                case 3:
+                    alert("星期三");
+                    break;
+                case 4:
+                    alert("星期四");
+                    break;
+                case 5:
+                    alert("星期五");
+                    break;
+                case 6:
+                    alert("星期六");
+                    break;
+                case 7:
+                    alert("星期日");
+                    break;
+                default:
+                    alert("没有这个日期");
+            }*/
+
+        /*  var money = 1000;
+          var count = 0;
+          while (money < 5000){
+              money *= 1.05;
+              count++;
+          }
+          console.log(count);*/
+        /*    var sum = 0;
+            for (var i = 1;i <= 100; i += 2){
+                sum += i;
+            }
+            console.log(sum);*/
+
+        /*  var sum = 0;
+          var count = 0;
+          for (var i = 1; i <= 100; i++) {
+              if (i % 7 == 0) {
+                  sum += i;
+                  count++;
+              }
+          }
+          console.log("1-100之间7的倍数有:" + count + "个" + "它们的和是:" + sum);*/
+
+        /*    var units = 0;//个位
+            var hund = 0;//十位
+            var kilo = 0;//百位
+            for (var i = 100; i < 1000;i++){
+                units = parseInt(i % 10);
+                hund = parseInt(i / 10 % 10);
+                kilo = parseInt(i / 100);
+                if (i == ((units * units * units) + (hund * hund * hund) + (kilo * kilo * kilo))){
+                    console.log(i);
+                }
+            }*/
+
+        /* var input = prompt("请输入一个大于1的数:");
+         var flag = true;
+         if (input <= 1) {
+             alert("输入不合法");
+         } else {
+             for (var i = 2; i < input; i++) {
+                 if (input % i == 0) {
+                     flag = false;
+                     continue;
+                 }
+             }
+             if (flag) {
+                 alert(input + "是质数");
+             } else {
+                 alert(input + "不是质数");
+             }
+         }*/
+
+        /*   for (var i = 1;i <= 5;i++){
+               for (var j = 1;j <= i;j++){
+                   document.write("*");
+               }
+               //换行
+               document.write("<br/>");
+           }*/
+
+
+        /*   for (var i = 1;i <= 5;i++){
+               for (var j = 1;j <= 5-i+1;j++){
+                   document.write("*");
+               }
+               //换行
+               document.write("<br/>");
+           }*/
+
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write("<span>"+i + "*" + j + "=" + i * j + "</span>");
+            }
+            //换行
+            document.write("<br />");
+        }
+
+    </script>
+    <style type="text/css">
+        span{
+            display: inline-block;
+            width: 80px;
+        }
+        </style>
 </head>
 <body>
-<script type="text/javascript">
-    // alert("你好");
-    // document.write("你好呀");
-    // console.log("你好不好");
-    // var str = "hello";
-    // str = "123"
-    // console.log(str);
-    // alert(str);
-    // document.write(str);
-    // console.log("hello")
-    // var a = 123;
-    // var b = "123";
-    // var c = "abc" * "bcd";
-    // console.log(c);
-    // console.log(typeof a);
-    // console.log(typeof b);
-    // console.log(typeof NaN);
-    // console.log(Number.MIN_VALUE);
-    // console.log(Number.MAX_VALUE);
-    // var bool = false;
-    // console.log(bool);
-    // console.log(typeof bool);
-    // var a = null;
-    // var b;
-    // console.log(a);
-    // console.log(b);
-    // console.log(typeof a);
-    // console.log(typeof b);
-    // const a = 123;
-    // const b = a.toString();
-    // const cc = "123";
-    // const c =Number(cc);
-    // const d =String(cc);
-    // console.log(typeof a);
-    // console.log(typeof b);
-    // console.log(typeof c);
-    // var a = 1;
-    // result = a + 1;
-    // console.log(result);
-    // document.write(result);
-    // alert(result);
-    // var result = true + "hello";
-    // console.log(result);
-    // var c = 123;
-    // console.log("c = " + c);
-    // let a = 1;
-    // let b = 1;
-    // let c = 0;
-    // c = a + 1;
-    // b++;
-    // a++;
-    // console.log(a);
-    // console.log(b);
-    // console.log(c);
-
-    // var result;
-    // result = 2 && 5;
-    // result = 0 && 2;
-    // result = 0 || 2;
-    // result = 2 || 0;
-    // console.log(result);
-    // var a = 10;
-    // var b = 20;
-    // console.log(a != b);
-    // console.log(a != 10);
-
-    /*  var score = prompt("请输入成绩:");
-      if (score < 0 || score > 100 || isNaN(score)){
-          alert("输入不合法");
-      }else {
-          if (score == 100) {
-              alert("奖励一辆BMW");
-          } else if (score >= 80 && score < 100) {
-              alert("奖励一台苹果手机");
-          } else if (score >= 60 && score < 80) {
-              alert("奖励一本参考书");
-          } else {
-              alert("没有奖励");
-          }
-      }*/
-
-    //比较三个数的大小，然后从大到小排序
-    /* var num1 = +prompt("请输入第一个数");  //用+转换成number
-     var num2 = +prompt("请输入第二个数");
-     var num3 = +prompt("请输入第三个数");
-
-     if (num1 > num2 && num1 > num3){
-         if (num2 > num3){
-             alert(num1 + "," + num2 + "," + num3);
-         }else{
-             alert(num1 + "," + num3 + "," + num2);
-         }
-     }else if (num2 > num1 && num2 > num3){
-         if (num1 > num3){
-             alert(num2 + "," + num1 + "," + num3);
-         }else{
-             alert(num2 + "," + num3 + "," + num1);
-         }
-     }else{
-         if (num1 > num2){
-             alert(num3 + "," + num1 + "," + num2);
-         }else{
-             alert(num3 + "," + num2 + "," + num1);
-         }
-     }*/
-
-    /*var input  = +prompt("请输入日期:");
-        switch (input) {
-            case 1:
-                alert("星期一");
-                break;
-            case 2:
-                alert("星期二");
-                break;
-            case 3:
-                alert("星期三");
-                break;
-            case 4:
-                alert("星期四");
-                break;
-            case 5:
-                alert("星期五");
-                break;
-            case 6:
-                alert("星期六");
-                break;
-            case 7:
-                alert("星期日");
-                break;
-            default:
-                alert("没有这个日期");
-        }*/
-
-    /*  var money = 1000;
-      var count = 0;
-      while (money < 5000){
-          money *= 1.05;
-          count++;
-      }
-      console.log(count);*/
-    /*    var sum = 0;
-        for (var i = 1;i <= 100; i += 2){
-            sum += i;
-        }
-        console.log(sum);*/
-
-  /*  var sum = 0;
-    var count = 0;
-    for (var i = 1; i <= 100; i++) {
-        if (i % 7 == 0) {
-            sum += i;
-            count++;
-        }
-    }
-    console.log("1-100之间7的倍数有:" + count + "个" + "它们的和是:" + sum);*/
-
-/*    var units = 0;//个位
-    var hund = 0;//十位
-    var kilo = 0;//百位
-    for (var i = 100; i < 1000;i++){
-        units = parseInt(i % 10);
-        hund = parseInt(i / 10 % 10);
-        kilo = parseInt(i / 100);
-        if (i == ((units * units * units) + (hund * hund * hund) + (kilo * kilo * kilo))){
-            console.log(i);
-        }
-    }*/
-
-    var input = prompt("请输入一个大于1的数:");
-    var flag = true;
-    if (input <= 1){
-        alert("输入不合法");
-    }else{
-        for (var i = 2;i < input ;i++){
-            if (input % i == 0){
-                flag = false;
-            }
-        }
-        if (flag){
-            alert(input + "是质数");
-        }else{
-            alert(input + "不是质数");
-        }
-    }
-
-</script>
-
 </body>
 </html>
