@@ -252,16 +252,53 @@
          delete obj.age
          console.log(obj.age);*/
 
-        function fun() {
-            console.log("123");
+        /* function fun() {
+             console.log("123");
+         }
+
+         var fun2 = function () {
+             console.log("我是匿名函数");
+         }
+         // fun();
+         // fun2();
+
+         function fun3(a, b) {
+             console.log(a + b);
+         }
+
+         // fun3(3,6);
+
+         function fun4(a,b,c){
+             var sum = a + b + c;
+             return sum;
+         }
+
+        var result = fun4(1,2,3);
+         console.log(result);*/
+
+
+        //自定义函数
+        function fun(o) {
+            console.log("我是" + o.name + ",今年我" + o.age + "岁了");
         }
 
-        var fun2 = function (){
-            console.log("我是匿名函数");
+        //对象
+        var pub = {
+            name: "李华",
+            age:21
         }
-        // fun();
-        fun2();
+
+        // fun(pub);
+
+        function fun2(a) {
+                // console.log("a = " + a);
+            a(pub);
+        }
+
+        fun2(fun);
+
     </script>
+
     <style type="text/css">
         body {
             width: 2000px;
