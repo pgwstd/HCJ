@@ -342,11 +342,11 @@
         //对象
         var obj2 = new Object();
 
-        var b =createPerson("张三", 18, "男");
+        var b = createPerson("张三", 18, "男");
         // b.sayName();
 
         //构造函数
-        function Person(name, age, gender){
+        function Person(name, age, gender) {
             this.name = name;
             this.age = age;
             this.gender = gender;
@@ -355,9 +355,10 @@
             };*/
         }
 
-        Person.prototype.sayName = function (){
+        Person.prototype.sayName = function () {
             alert(this.name);
         };
+
         var per = new Person("张三", 18, "男");
 
         // console.log(per.seyName());
