@@ -298,7 +298,7 @@
                 fun2(function (){alert("hello")});*/
 
 
-        var obj = {
+       /* var obj = {
             name: "孙悟空",
             age: 131,
             gender: "男",
@@ -350,23 +350,31 @@
             this.name = name;
             this.age = age;
             this.gender = gender;
-            /*this.sayName = function () {
+            /!*this.sayName = function () {
                 alert(this.name);
-            };*/
+            };*!/
         }
 
         Person.prototype.sayName = function () {
             alert(this.name);
         };
 
-        var per = new Person("张三", 18, "男");
+        var per = new Person("张三", 18, "男");*/
 
         // console.log(per.seyName());
         // console.log("sayName" in per);
-        console.log(per.__proto__.hasOwnProperty("sayName"));
+        // console.log(per.__proto__.hasOwnProperty("sayName"));
 
         /*console.log(per);
         console.log(per instanceof Person);*/
+
+        var arr = new Array();
+        arr[0] = 10;
+        arr[1] = 22;
+        // console.log(typeof arr);
+
+        console.log(arr[0]);
+        console.log(arr);
 
     </script>
 
