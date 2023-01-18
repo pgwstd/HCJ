@@ -335,7 +335,7 @@
             obj.gender = gender;
             obj.sayName = function () {
                 alert(this.name);
-            }
+            };
             return obj;
         }
 
@@ -343,7 +343,29 @@
         var obj2 = new Object();
 
         var b =createPerson("张三", 18, "男");
-        b.sayName();
+        // b.sayName();
+
+        //构造函数
+        function Person(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            /*this.sayName = function () {
+                alert(this.name);
+            };*/
+        }
+
+        Person.prototype.sayName = function (){
+            alert(this.name);
+        };
+        var per = new Person("张三", 18, "男");
+
+        // console.log(per.seyName());
+        // console.log("sayName" in per);
+        console.log(per.__proto__.hasOwnProperty("sayName"));
+
+        /*console.log(per);
+        console.log(per instanceof Person);*/
 
     </script>
 
