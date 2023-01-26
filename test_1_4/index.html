@@ -395,14 +395,51 @@
         // arr.pop();
         // console.log(arr);
 
-        var arr = ["孙悟空", "猪八戒", "沙悟净", "唐僧", "白龙马"];
-        var result = arr.push("白骨精");
-        console.log(arr);
-        console.log(result);
-        var result2 = arr.pop();
-        console.log(arr);
-        console.log(result2);
+        /*    var arr = ["孙悟空", "猪八戒", "沙悟净", "唐僧", "白龙马"];
+            var result = arr.push("白骨精");
+            console.log(arr);
+            console.log(result);
+            var result2 = arr.pop();
+            console.log(arr);
+            console.log(result2);
+            arr.unshift("12");
+            console.log(arr);
+            arr.shift();
+            console.log(arr);*/
+        /* var arr = ["孙悟空", "猪八戒", "沙悟净", "唐僧", "白龙马"];
+         for (var i = 0;i < arr.length;i++){
+             console.log(arr[i]);
+         }*/
 
+        //人的一个构造函数
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        //提取出满18岁的构造函数
+        function getAdult(arr) {
+            //创建一个数组
+            var newarr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].age >= 18){
+                    newarr[newarr.length] = arr[i];
+                }
+            }
+            return newarr;
+        }
+
+        //创建对象
+        var per = new Person("孙悟空", 8);
+        var per2 = new Person("猪八戒", 8);
+        var per3 = new Person("沙悟净", 38);
+        var per4 = new Person("唐僧", 48);
+        var per5 = new Person("白龙马", 58);
+        //创建一个数组
+        var perArr = [per, per2, per3, per4, per5];
+        // console.log(perArr);
+        var result = getAdult(perArr);
+        console.log(result);
 
     </script>
 
