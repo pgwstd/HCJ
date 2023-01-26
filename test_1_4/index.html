@@ -411,7 +411,7 @@
              console.log(arr[i]);
          }*/
 
-        //人的一个构造函数
+      /*  //人的一个构造函数
         function Person(name, age) {
             this.name = name;
             this.age = age;
@@ -423,7 +423,8 @@
             var newarr = [];
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i].age >= 18){
-                    newarr[newarr.length] = arr[i];
+                    // newarr[newarr.length] = arr[i];
+                    newarr.push(arr[i]);//使用push在数组后添加元素
                 }
             }
             return newarr;
@@ -439,7 +440,16 @@
         var perArr = [per, per2, per3, per4, per5];
         // console.log(perArr);
         var result = getAdult(perArr);
-        console.log(result);
+        console.log(result);*/
+
+        /* var arr = ["孙悟空", "猪八戒", "沙悟净", "唐僧", "白龙马"];
+         arr.forEach(function (value, index, array){
+             console.log(array);
+         });*/
+
+
+        var arr = ["孙悟空", "猪八戒", "沙悟净", "唐僧", "白龙马"];
+        console.log(arr.slice(0,2));
 
     </script>
 
