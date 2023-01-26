@@ -411,36 +411,36 @@
              console.log(arr[i]);
          }*/
 
-      /*  //人的一个构造函数
-        function Person(name, age) {
-            this.name = name;
-            this.age = age;
-        }
+        /*  //人的一个构造函数
+          function Person(name, age) {
+              this.name = name;
+              this.age = age;
+          }
 
-        //提取出满18岁的构造函数
-        function getAdult(arr) {
-            //创建一个数组
-            var newarr = [];
-            for (var i = 0; i < arr.length; i++) {
-                if (arr[i].age >= 18){
-                    // newarr[newarr.length] = arr[i];
-                    newarr.push(arr[i]);//使用push在数组后添加元素
-                }
-            }
-            return newarr;
-        }
+          //提取出满18岁的构造函数
+          function getAdult(arr) {
+              //创建一个数组
+              var newarr = [];
+              for (var i = 0; i < arr.length; i++) {
+                  if (arr[i].age >= 18){
+                      // newarr[newarr.length] = arr[i];
+                      newarr.push(arr[i]);//使用push在数组后添加元素
+                  }
+              }
+              return newarr;
+          }
 
-        //创建对象
-        var per = new Person("孙悟空", 8);
-        var per2 = new Person("猪八戒", 8);
-        var per3 = new Person("沙悟净", 38);
-        var per4 = new Person("唐僧", 48);
-        var per5 = new Person("白龙马", 58);
-        //创建一个数组
-        var perArr = [per, per2, per3, per4, per5];
-        // console.log(perArr);
-        var result = getAdult(perArr);
-        console.log(result);*/
+          //创建对象
+          var per = new Person("孙悟空", 8);
+          var per2 = new Person("猪八戒", 8);
+          var per3 = new Person("沙悟净", 38);
+          var per4 = new Person("唐僧", 48);
+          var per5 = new Person("白龙马", 58);
+          //创建一个数组
+          var perArr = [per, per2, per3, per4, per5];
+          // console.log(perArr);
+          var result = getAdult(perArr);
+          console.log(result);*/
 
         /* var arr = ["孙悟空", "猪八戒", "沙悟净", "唐僧", "白龙马"];
          arr.forEach(function (value, index, array){
@@ -452,11 +452,11 @@
         console.log(arr.slice(0,2));*/
 
         //去掉数组中重复的数字
-        var array = [1,2,3,2,2,1,3,4,2,5];
-        for (var i = 0;i < array.length;i++){
-            for (var j = i + 1;j < array.length - 1;j++){
-                if (array[i] == array[j]){
-                    array.splice(j,1);//删除数组中的元素
+        var array = [1, 2, 3, 2, 2, 1, 3, 4, 2, 5];
+        for (var i = 0; i < array.length; i++) {
+            for (var j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    array.splice(j, 1);//删除数组中的元素
                     j--;//删除一个元素后，数组长度减一，j也要减一
                 }
 
