@@ -451,7 +451,7 @@
         /*var arr = ["孙悟空", "猪八戒", "沙悟净", "唐僧", "白龙马"];
         console.log(arr.slice(0,2));*/
 
-        //去掉数组中重复的数字
+     /*   //去掉数组中重复的数字
         var array = [1, 2, 3, 2, 2, 1, 3, 4, 2, 5];
         for (var i = 0; i < array.length; i++) {
             for (var j = i + 1; j < array.length; j++) {
@@ -463,7 +463,21 @@
             }
 
         }
-        console.log(array);
+        console.log(array);*/
+
+        var arr = ["孙悟空", "猪八戒"];
+        var arr2 = ["沙悟净", "唐僧"];
+
+        console.log(arr.concat(arr2));
+        console.log(arr.join("-"));
+        console.log(typeof arr.join());
+        arr2.reverse();
+        console.log(arr2);
+
+        var arr3 = [1,2,3,4,5,11];
+        arr3.sort();
+        console.log(arr3);
+
     </script>
 
     <style type="text/css">
