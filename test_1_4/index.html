@@ -493,14 +493,24 @@
 
         console.log(arr);*/
 
-        function fun(){
+      /*  function fun(){
             alert(this.name);
         }
 
 
         var obj = {name:"123"};
         // fun.call();
-        fun.apply(obj);
+        fun.apply(obj);*/
+
+
+        function fun(){
+            // console.log(arguments);
+            // console.log(arguments.length);
+            console.log(arguments[0]);
+        }
+
+        fun("123",123);
+
     </script>
 
     <style type="text/css">
