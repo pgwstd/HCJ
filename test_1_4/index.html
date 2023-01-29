@@ -567,10 +567,16 @@
         /*var str= "1a2b3c4dA1B2C4";
         console.log(str.match(/[a-z]/gi));*/
 
-        //正则检查手机号是否合法
+        /*//正则检查手机号是否合法
         var phoneStr = "19567890123";
         var phoneReg = /^1[3-9][0-9]{9}$/;
-        console.log(phoneReg.test(phoneStr));
+        console.log(phoneReg.test(phoneStr));*/
+
+        //邮件正则
+        var emailReg = /^\w{3,}@[A-z0-9]+(\.[A-z]{2,5})$/;
+        var email = "abcd@163.com";
+        console.log(emailReg.test(email));
+
     </script>
 
     <style type="text/css">
