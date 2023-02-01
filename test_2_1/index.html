@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <title>全选JS练习</title>
     <script type="text/javascript">
-        window.onload = function (){
-             //全选单击响应
+        window.onload = function () {
+            //全选单击响应
             var checkedAllBtn = document.getElementById("checkedAllBtn");
-            checkedAllBtn.onclick = function (){
-
+            checkedAllBtn.onclick = function () {
+                var items = document.getElementsByName("items");
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = true;
+                }
             };
+
+            //全不选单击响应
+            var checkedNoBtn = document.getElementById("checkedNoBtn");
+            checkedNoBtn.onclick = function (){
+                var items = document.getElementsByName("items");
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = true;
+                }
+            };
+
+            //反选
+            //提交
         };
 
 
@@ -17,15 +32,15 @@
 </head>
 <body>
 <form method="post" action="">
-    你的喜欢的运行是?
-    <input type="checkbox" id="checkedAllBox" />全选/全不选
-    <br />
+    你的喜欢的运行是?<input type="checkbox" id="checkedAllBox" />全选/全不选
+
+    <br/>
     <input type="checkbox" name="items" value="足球" />足球
     <input type="checkbox" name="items" value="篮球" />篮球
     <input type="checkbox" name="items" value="羽毛球" />羽毛球
     <input type="checkbox" name="items" value="兵兵球" />兵兵球
-    <br />
-    <input type="button" name="checkedAllBtn" value="全选" />
+    <br/>
+    <input type="button" name="checkedAllBtn" value="全 选" />
     <input type="button" name="checkedNoBtn" value="全不选" />
     <input type="button" name="checkedRevBtn" value="反选" />
     <input type="button" name="sendBtn" value="提交" />
