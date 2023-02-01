@@ -28,11 +28,11 @@
             checkedRevBtn.onclick = function () {
                 var items = document.getElementsByName("items");
                 for (var i = 0; i < items.length; i++) {
-                  /*  if (items[i].checked === true) {
-                        items[i].checked = false;
-                    } else {
-                        items[i].checked = true;
-                    }*/
+                    /*  if (items[i].checked === true) {
+                          items[i].checked = false;
+                      } else {
+                          items[i].checked = true;
+                      }*/
                     items[i].checked = !items[i].checked;
                 }
             };
@@ -41,8 +41,8 @@
             sendBtn.onclick = function () {
                 var items = document.getElementsByName("items");
                 for (var i = 0; i < items.length; i++) {
-                    if (items[i].checked){
-                    alert(items[i].value);
+                    if (items[i].checked) {
+                        alert(items[i].value);
                     }
                 }
             };
@@ -55,6 +55,20 @@
                     items[i].checked = this.checked;
                 }
             };
+
+            var checkedAllBox = document.getElementById("checkedAllBox");
+            var items = document.getElementsByName("items");
+            for (var i = 0; i < items.length; i++) {
+                items[i].onclick = function () {
+                    checkedAllBox.checked = true;
+                    for (var j = 0; j < items.length; j++) {
+                        if (!items[j].checked) {
+                            checkedAllBox.checked = false;
+                        }
+                    }
+                };
+            }
+
         };
 
 
