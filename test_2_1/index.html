@@ -52,7 +52,7 @@
             checkedAllBox.onclick = function () {
                 var items = document.getElementsByName("items");
                 for (var i = 0; i < items.length; i++) {
-                    items[i].checked = !items[i].checked;
+                    items[i].checked = this.checked;
                 }
             };
         };
