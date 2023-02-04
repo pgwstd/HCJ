@@ -3,62 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>es6学习</title>
-  <script type="text/javascript">
-    window.onload = function (){
-   /* var x = 10;
-    {
-      // let x = 2;
-      const x = 4;
-      // var y = x ** 2;
-      var y = Math.pow(x,2);
-    }
-    document.getElementById("demo").innerHTML = y;*/
+    <script type="text/javascript">
+        window.onload = function () {
+            /* var x = 10;
+             {
+               // let x = 2;
+               const x = 4;
+               // var y = x ** 2;
+               var y = Math.pow(x,2);
+             }
+             document.getElementById("demo").innerHTML = y;*/
 
-     /* function myFunction(x, y = 10){
-        return x + y;
-      }
-      document.getElementById("demo").innerHTML = myFunction(5);*/
+            /* function myFunction(x, y = 10){
+               return x + y;
+             }
+             document.getElementById("demo").innerHTML = myFunction(5);*/
 
-   /*   var numbers = [4, 9, 16, 25, 29];
-      function myFunction(value, index, array){
-        return value > 18;
-      }
-      var first = numbers.find(myFunction);
-      document.getElementById("demo").innerHTML = "大于18的第一个值是:"+first;
-    }*/
+            /*   var numbers = [4, 9, 16, 25, 29];
+               function myFunction(value, index, array){
+                 return value > 18;
+               }
+               var first = numbers.find(myFunction);
+               document.getElementById("demo").innerHTML = "大于18的第一个值是:"+first;
+             }*/
 
-    /*  var numbers = [4, 9, 16, 25, 29];
-      function myFunction(value, index, array){
-        return value > 18;
-      }
-      var first = numbers.findIndex(myFunction);
-      document.getElementById("demo").innerHTML = "大于18的第一个索引是:"+first;*/
+            /*  var numbers = [4, 9, 16, 25, 29];
+              function myFunction(value, index, array){
+                return value > 18;
+              }
+              var first = numbers.findIndex(myFunction);
+              document.getElementById("demo").innerHTML = "大于18的第一个索引是:"+first;*/
 
-      /*var  x = Number.EPSILON;
-      document.getElementById("demo").innerHTML = x;*/
+            /*var  x = Number.EPSILON;
+            document.getElementById("demo").innerHTML = x;*/
 
-      /*var  x = Number.MIN_SAFE_INTEGER;
-      document.getElementById("demo").innerHTML = x;*/
+            /*var  x = Number.MIN_SAFE_INTEGER;
+            document.getElementById("demo").innerHTML = x;*/
 
-      /*var  x = Number.MAX_SAFE_INTEGER;
-      document.getElementById("demo").innerHTML = x;*/
+            /*var  x = Number.MAX_SAFE_INTEGER;
+            document.getElementById("demo").innerHTML = x;*/
 
-     /* var x = Number.isInteger(10.6);
-      document.getElementById("demo").innerHTML = x;*/
+            /* var x = Number.isInteger(10.6);
+             document.getElementById("demo").innerHTML = x;*/
 
-      /*var x = Number.isSafeInteger(101212122111211212);
-      document.getElementById("demo").innerHTML = x*/
+            /*var x = Number.isSafeInteger(101212122111211212);
+            document.getElementById("demo").innerHTML = x*/
 
-      /*var x = Number.isFinite(10/1);
-      document.getElementById("demo").innerHTML = x;*/
+            /*var x = Number.isFinite(10/1);
+            document.getElementById("demo").innerHTML = x;*/
 
-     /* var x = Number.isNaN("hello");
-      document.getElementById("demo").innerHTML = x;*/
+            /* var x = Number.isNaN("hello");
+             document.getElementById("demo").innerHTML = x;*/
 
 
-    }
+            /*const myFunction = (x, y) => x * y;
+            document.getElementById("demo").innerHTML = myFunction(5, 5);*/
 
-  </script>
+            /*var x = function(x, y) {
+                return x * y;
+            }
+            document.getElementById("demo").innerHTML = x(5, 5);*/
+
+            const x = (x, y) => { return x * y };
+            document.getElementById("demo").innerHTML = x(5, 5);
+        }
+
+    </script>
 </head>
 <body>
 <p id="demo"></p>
