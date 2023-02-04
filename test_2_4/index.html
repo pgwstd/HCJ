@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>es6学习</title>
+  <script type="text/javascript">
+    window.onload = function (){
+    var x = 10;
+    {
+      // let x = 2;
+      const x = 3;
+      var y = x ** 2;
+    }
+    document.getElementById("demo").innerHTML = y;
+
+    }
+
+  </script>
 </head>
 <body>
-
+<p id="demo"></p>
 </body>
 </html>
