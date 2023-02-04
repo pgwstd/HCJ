@@ -5,15 +5,26 @@
     <title>es6学习</title>
   <script type="text/javascript">
     window.onload = function (){
-    var x = 10;
+   /* var x = 10;
     {
       // let x = 2;
       const x = 4;
       // var y = x ** 2;
       var y = Math.pow(x,2);
     }
-    document.getElementById("demo").innerHTML = y;
+    document.getElementById("demo").innerHTML = y;*/
 
+     /* function myFunction(x, y = 10){
+        return x + y;
+      }
+      document.getElementById("demo").innerHTML = myFunction(5);*/
+
+      var numbers = [4, 9, 16, 25, 29];
+      function myFunction(value, index, array){
+        return value > 18;
+      }
+      var first = numbers.find(myFunction);
+      document.getElementById("demo").innerHTML = "大于18的第一个值是:"+first;
     }
 
   </script>
