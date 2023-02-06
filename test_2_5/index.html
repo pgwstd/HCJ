@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <title>学习</title>
     <style type="text/css">
-
-
-
-
+            #box1{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
     </style>
     <script type="text/javascript">
         window.onload = function (){
             // var w = getStyle(box1,"width");
             // alert(w);
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function (){
+                alert(box1.clientWidth);
 
+            };
         };
         //解决ie8和正常浏览器获取元素样式问题
-        function getStyle(obj, name){
-           /* if (window.getComputedStyle){
+      /*  function getStyle(obj, name){
+           /!* if (window.getComputedStyle){
                 return getComputedStyle(obj, null)[name];
             }
             else{
                 return obj.currentStyle[name];
-            }*/
+            }*!/
             //二次优化
             return window.getComputedStyle?getComputedStyle(obj, null)[name]:obj.currentStyle[name];
-        }
+        }*/
     </script>
 </head>
 <body>
-
+<button id="btn01">点击一下</button>
+<br />
+<br />
+<div id="box1"></div>
 </body>
 </html>
