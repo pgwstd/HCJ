@@ -9,6 +9,7 @@
             height: 120px;
             background-color: red;
             padding: 10px;
+            border: 10px solid yellow;
         }
     </style>
     <script type="text/javascript">
@@ -19,8 +20,9 @@
             var btn01 = document.getElementById("btn01");
             btn01.onclick = function () {
                 // alert(box1.clientWidth);
-                alert(box1.clientHeight);
-                // alert();
+                // alert(box1.clientHeight);
+                // box1.clientHeight = 300;
+
             };
         };
         //解决ie8和正常浏览器获取元素样式问题
