@@ -17,7 +17,6 @@
             else{
                 return obj.currentStyle[name];
             }*/
-
             return window.getComputedStyle?getComputedStyle(obj, null)[name]:obj.currentStyle[name];
         }
 
