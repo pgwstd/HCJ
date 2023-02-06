@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的委派</title>
+  <script type="text/javascript">
+    window.onload = function (){
+      var u1 = document.getElementById("u1");
+      var btn = document.getElementById("btn");
+      btn.onclick = function (){
+        // alert("添加");
+        var li = document.createElement("li");
+        li.innerHTML = "<a href='javascript:;'>新的超联接</a>";
+        u1.appendChild(li);
+      };
+      var allA = document.getElementsByTagName("a");
+      for (var i = 0; allA.length; i++){
+        allA[i].onclick = function (){
+          alert("123");
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+<button id="btn">添加超联接</button>
+<ul id="u1">
+  <li><a href="javascript:;">超联接一</a> </li>
+  <li><a href="javascript:;">超联接二</a> </li>
+  <li><a href="javascript:;">超联接三</a> </li>
+  <li><a href="javascript:;">超联接四</a> </li>
+</ul>
+</body>
+</html>
