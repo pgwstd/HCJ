@@ -17,15 +17,20 @@
     window.onload = function (){
       var s1 = document.getElementById("s1");
       var box1 = document.getElementById("box1");
-      s1.onclick = function (){
+      s1.onclick = function (event){
+        event = event || window.event;
         alert("123");
+        event.cancelBubble = true;
       };
-      box1.onclick = function (){
+      box1.onclick = function (event){
+        event = event || window.event;
         alert("145");
+        event.cancelBubble = true;
       };
-      document.body.onclick = function (){
+      document.body.onclick = function (event){
+        event = event || window.event;
         alert("213123123");
-
+        event.cancelBubble = true;
       };
     };
 </script>
