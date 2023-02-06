@@ -17,6 +17,7 @@
             else{
                 return obj.currentStyle[name];
             }*/
+            //二次优化
             return window.getComputedStyle?getComputedStyle(obj, null)[name]:obj.currentStyle[name];
         }
 
