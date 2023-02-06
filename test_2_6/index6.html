@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+  <script type="text/javascript">
+    window.onload = function (){
+      var btn = document.getElementById("btn");
+      btn.onclick = function (){
+        alert(1223);
+      };
+      btn.onclick = function (){
+        alert(3);
+      };
+    };
+  </script>
+</head>
+<body>
+<button id="btn">点击一下</button>
+</body>
+</html>
