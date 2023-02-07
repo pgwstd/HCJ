@@ -28,6 +28,15 @@
             var box1 = document.getElementById("box1");
             var box2 = document.getElementById("box2");
             var box3 = document.getElementById("box3");
+            bind(box1, "click", function (){
+               alert("我是box1");
+            });
+            bind(box2, "click", function (){
+                alert("我是box2");
+            });
+            bind(box3, "click", function (){
+                alert("我是box3");
+            });
         };
 
         function bind(obj, eventStr, callBack) {
