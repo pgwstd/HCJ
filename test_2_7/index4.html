@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+  <style type="text/css">
+    #box1{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      position: absolute;
+    }
+    #box2{
+      width: 100px;
+      height: 100px;
+      background-color: yellowgreen;
+      position: absolute;
+      top: 300px;
+      left: 300px;
+    }
+
+  </style>
+  <script type="text/javascript">
+    window.onload = function (){
+      var box1 = document.getElementById("box1");
+      var box2 = document.getElementById("box2");
+      drag(box1);
+      drag(box2);
+    };
+    function drag(obj){
+      obj.onmousedown = function (event) {
+        if (obj.setCapture){
+          obj.setCapture();
+        }
+        event = event || window.event;
+        var lf = event.offsetX;
+        var tp = event.offsetY;
+        document.onmousemove = function (event) {
+          event = event || window.event;
+          var left = event.clientX;
+          var top = event.clientY;
+          obj.style.top = top - tp + "px";
+          obj.style.left = left - lf + "px";
+        };
+        document.onmouseup = function () {
+          document.onmousemove = null;
+          document.onmouseup = null;
+          obj.releaseCapture && obj.releaseCapture();
+          // alert("我松手了");
+        };
+        return false;
+      };
+    }
+  </script>
+</head>
+<body>
+<div  id="box1"></div>
+<div  id="box2"></div>
+</body>
+</html>
