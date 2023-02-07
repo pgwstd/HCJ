@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>延时调用</title>
+  <script type="text/javascript">
+    var cont = document.getElementById("cont");
+    var num = 0;
+    setTimeout(function (){
+      console.log(num++);
+    },3000);
+  </script>
+</head>
+<body>
+<p id="cont">1</p>
+</body>
+</html>
