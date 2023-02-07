@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+  <script type="text/javascript">
+    window.onload = function (){
+      var cont = document.getElementById("cont");
+    /*  for (var i= 0; i < 100; i++){
+        cont.innerHTML = i;
+      }*/
+      var num = 0;
+      setInterval(function (){
+        cont.innerHTML = num++;
+      },1000);
+    };
+  </script>
+</head>
+<body>
+<h1 id="cont"></h1>
+</body>
+</html>
