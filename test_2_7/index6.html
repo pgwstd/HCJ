@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+  <style type="text/css">
+    #box1{
+      width: 100px;
+      height: 100px;
+      background-color: #97C4B8;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function (){
+        document.onkeydown = function (event){
+          event = event || window.event;
+          if (event.keyCode >= 48 && event.keyCode <= 57){
+            return false;
+          }
+        };
+      document.onkeyup = function (event){
+        event = event || window.event;
+        console.log(event.keyCode);
+      };
+    };
+  </script>
+</head>
+<body>
+<!--<div id="box1"></div>-->
+<input type="text" />
+</body>
+</html>
