@@ -10,8 +10,11 @@
         cont.innerHTML = i;
       }*/
       var num = 0;
-      setInterval(function (){
+     var time = setInterval(function (){
         cont.innerHTML = num++;
+      if (num == 6){
+        clearInterval(time);
+      }
       },1000);
     };
   </script>
