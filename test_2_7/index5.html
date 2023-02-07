@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动</title>
+  <style type="text/css">
+    #box1{
+      width: 100px;
+      height: 100px;
+      background-color: yellowgreen;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function () {
+      var box1 = document.getElementById("box1");
+      box1.onmousewheel = function (event) {
+        event = event || window.event;
+        if (event.wheelDelta > 0 || event.detail < 0){
+          box1.style.height = box1.clientHeight - 10 + "px";
+        }else{
+          box1.style.height = box1.clientHeight + 10 + "px";
+        }
+      /*  event.preventDefault();
+        return false;*/
+      };
+      bind(box1, "DOMMouseScroll",box1.onmousewheel);
+    };
+      function drag(obj){
+        obj.onmousedown = function (event) {
+          if (obj.setCapture){
+            obj.setCapture();
+          }
+          event = event || window.event;
+          var lf = event.offsetX;
+          var tp = event.offsetY;
+          document.onmousemove = function (event) {
+            event = event || window.event;
+            var left = event.clientX;
+            var top = event.clientY;
+            obj.style.top = top - tp + "px";
+            obj.style.left = left - lf + "px";
+          };
+          document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+            obj.releaseCapture && obj.releaseCapture();
+            // alert("我松手了");
+          };
+          return false;
+        };
+    };
+  </script>
+</head>
+<body style="height: 1000px">
+<div id="box1"></div>
+</body>
+</html>
