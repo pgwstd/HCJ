@@ -15,13 +15,9 @@
         window.onload = function () {
             var box1 = document.getElementById("box1");
             var speed = 10;
-
-            document.onkeydown = function (event) {
-                event = event || window.event;
-                if (event.ctrlKey){
-                    speed = 100;
-                }
-                switch (event.keyCode) {
+            var dir = 0
+            setInterval(function (){
+                switch (dir) {
                     case 37:
                         // alert("向左");
                         box1.style.left = box1.offsetLeft - speed + "px";
@@ -39,6 +35,16 @@
                         box1.style.top = box1.offsetTop + speed + "px";
                         break;
                 }
+            },30);
+            document.onkeydown = function (event) {
+                event = event || window.event;
+                if (event.ctrlKey) {
+                    speed = 100;
+                }
+                dir = event.keyCode;
+            };
+            document.onkeyup = function (){
+              dir = 0;
             };
         };
     </script>
