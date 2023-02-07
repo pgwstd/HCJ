@@ -24,6 +24,9 @@
         window.onload = function () {
             var box1 = document.getElementById("box1");
             box1.onmousedown = function (event) {
+                if (box1.setCapture){
+                box1.setCapture();
+                }
                 event = event || window.event;
                 var lf = event.offsetX;
                 var tp = event.offsetY;
@@ -37,13 +40,16 @@
                 document.onmouseup = function () {
                     document.onmousemove = null;
                     document.onmouseup = null;
+                    box1.releaseCapture && box1.releaseCapture();
                     // alert("我松手了");
                 };
+                return false;
             };
         };
     </script>
 </head>
 <body>
+我是一段文字
 <div id="box1"></div>
 <div id="box2"></div>
 </body>
