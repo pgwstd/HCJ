@@ -41,11 +41,12 @@
             float: left;
             width: 15px;
             height: 15px;
-            background-color: #ffffff;
+            background-color: #FFFFFF;
             margin: 0 5px;
             opacity: 0.5;
         }
-        #navDiv a:hover{
+
+        #navDiv a:hover {
             background-color: #aa3333;
         }
     </style>
@@ -58,8 +59,23 @@
             var allA = document.getElementsByTagName("a");
             var index = 0;
             imgList.style.width = 1220 * imgArr.length + "px";
-            navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth)/2 + "px";
+            navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + "px";
             allA[index].style.backgroundColor = "#aa3333";
+            // setA();
+            for (var i = 0; i < allA.length; i++){
+                allA[i].num = i;
+                allA[i].onclick = function (){
+                    index = this.num;
+                    imgList.style.left = index * -1220 + "px";
+                    setA();
+                };
+            }
+            function setA(){
+              for (var i = 0; i < allA.length; i++){
+                    allA[i].style.backgroundColor = "";
+              }
+                allA[index].style.backgroundColor = "#aa3333";
+            };
         };
     </script>
 </head>
