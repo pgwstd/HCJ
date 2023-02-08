@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var btn01 = document.getElementById("btn01");
+            var box1 = document.getElementById("box1");
+            btn01.onclick = function () {
+                // box1.style.left = 10 + "px";
+               var time = setInterval(function () {
+                    var oldValue = parseInt(getStyle(box1, "left"));
+                    var newValue = oldValue + 10;
+                    box1.style.left = newValue + "px";
+                    if (newValue >= 800){
+                        clearInterval(time);
+                    }
+                    // alert(oldValue);
+                }, 30);
+            };
+        };
+
+        //解决ie8和正常浏览器获取元素样式问题
+        function getStyle(obj, name) {
+            /* if (window.getComputedStyle){
+                 return getComputedStyle(obj, null)[name];
+             }
+             else{
+                 return obj.currentStyle[name];
+             }*/
+            //二次优化
+            return window.getComputedStyle ? getComputedStyle(obj, null)[name] : obj.currentStyle[name];
+        }
+    </script>
+</head>
+<body>
+<button id="btn01">点击按钮以后box1向右移动</button>
+<br/><br/>
+<div id="box1"></div>
+</body>
+</html>
