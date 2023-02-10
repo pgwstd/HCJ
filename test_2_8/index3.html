@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>JS进阶</title>
-  <script type="text/javascript">
-    var aqwe = 18;
-    var b = 3;
-    // console.log(Date.prototype);
-function fun(){
+    <script type="text/javascript">
+        var aqwe = 18;
+        var b = 3;
 
-};
-console.log(fun.prototype);
-  </script>
+        // console.log(Date.prototype);
+        function Fn() {
+            this.test = function () {
+                console.log('test');
+            };
+        };
+        Fn.prototype.test2 = function () {
+            console.log('test2');
+        };
+        var fn = new Fn();
+        console.log(fn.test());
+        console.log(fn.test2());
+        console.log(fn.toString());
+        // fn.test3();
+        // console.log(fun.prototype);
+    </script>
 </head>
 <body>
 
