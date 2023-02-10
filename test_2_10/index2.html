@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>执行上下文</title>
-  <script type="text/javascript">
-    window.onload = function (){
+    <script type="text/javascript">
+        window.onload = function () {
+            /*   function bind(num){
+                 console.log(num);
+               };
+             bind(123);*/
 
-    };
-  </script>
+            var a = 10;
+            var bar = function (x) {
+                var b = 5;
+                foo(x + b);
+            };
+            var foo = function () {
+                var c = 5;
+                console.log(a + c + y);
+            };
+        };
+
+    </script>
 </head>
 <body>
 
