@@ -10,15 +10,28 @@
                };
              bind(123);*/
 
-            var a = 10;
-            var bar = function (x) {
-                var b = 5;
-                foo(x + b);
+            /*    var a = 10;
+                var bar = function (x) {
+                    var b = 5;
+                    foo(x + b);
+                };
+                var foo = function () {
+                    var c = 5;
+                    console.log(a + c + y);
+                };*/
+
+            console.log("gb:" + i);
+            var i = 1;
+            foo(1);
+            function foo(){
+                if (i === 4){
+                    return;
+                }
+                console.log("foo() begin:" + i);
+                foo(i + 1)
+                console.log("foo() begin:" + i);
             };
-            var foo = function () {
-                var c = 5;
-                console.log(a + c + y);
-            };
+            console.log("gload end:" + i);
         };
 
     </script>
