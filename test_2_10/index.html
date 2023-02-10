@@ -5,7 +5,21 @@
     <title>原型链</title>
   <script type="text/javascript">
     window.onload = function (){
+      /*  function Fn(){
 
+        };*/
+      /*  Fn.prototype.a = "aasfas";
+        var fn1 = new Fn();
+        console.log(fn1.a, fn1);*/
+      /*  var f1 = new Fn();
+        console.log(f1 instanceof Fn);
+        console.log(f1 instanceof Object);*/
+        var a = 3;
+        function Fn(){
+          console.log(a);
+          var a = 4;
+        };
+        Fn();
     };
   </script>
 </head>
