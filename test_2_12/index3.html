@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件循环</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            function fn1() {
+                console.log("fn1");
+            }
+
+            fn1();
+            var btn = document.getElementById("btn");
+            btn.onclick = function () {
+                console.log("点击了按钮");
+            };
+            setTimeout(function () {
+                console.log("定时器执行");
+            });
+
+            function fn2() {
+                console.log("fn2");
+            }
+
+            fn2();
+        };
+    </script>
+</head>
+<body>
+<button id="btn">点击一下</button>
+</body>
+</html>
