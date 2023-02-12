@@ -10,11 +10,11 @@
             var start = Date.now();
             var time;
             btn.onclick = function () {
-              time = setInterval(function () {
+                time = setInterval(function () {
                     console.log(Date.now() - start);
                 }, 2000);
             };
-            btn2.onclick = function (){
+            btn2.onclick = function () {
                 //关闭定时器
                 clearInterval(time);
             };
