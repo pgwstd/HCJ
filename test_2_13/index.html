@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECM6</title>
+    <style type="text/css">
+        .item{
+            width: 100px;
+            height: 100px;
+            border: 5px solid #000;
+            margin: 10px;
+            float: left;
+            /*块级作用域*/
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+           let items = document.getElementsByTagName('item');
+           for (let i = 0; i < items.length; i++){
+               items[i].onclick = function (){
+                 // this.style.background = 'pink';
+                   items[i].style.backgroundColor = 'red';
+               };
+           }
+        };
+    </script>
+</head>
+<body>
+<div class="container">
+    <h2 class="page-header">点击变换颜色</h2>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+</body>
+</html>
