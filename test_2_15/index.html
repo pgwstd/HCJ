@@ -5,8 +5,19 @@
     <title>ECM6</title>
   <script type="text/javascript">
     window.onload = function (){
-      let s = Symbol();
-      console.log(s);
+   /*   let s = Symbol();
+      console.log(s);*/
+
+        setTimeout(() => {
+            console.log('111');
+            setTimeout(() => {
+                console.log('222');
+                setTimeout(() => {
+                    console.log('333');
+                }, 3000);
+            }, 2000);
+        }, 1000);
+
     };
   </script>
 </head>
