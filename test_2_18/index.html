@@ -5,6 +5,21 @@
     <title>ECM6</title>
   <script type="text/javascript">
     window.onload = function (){
+        const  p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                /*let data = 'hello';
+                resolve(data);*/
+
+                let err = new Error('出错了');
+                reject(err);
+            }, 1000);
+        });
+
+        p.then(function (value){
+            console.log(value);
+        }, function (reason){
+            console.error(reason);
+        });
 
 
     };
