@@ -7,11 +7,16 @@
         window.onload = function () {
             let a = 10;
             let b = 20;
-            var n = new Object(10);
+            let n = new Object(10);
+            function fn(a, b) {
+                return a + b;
+            }
         console.log(typeof a);
         console.log(a instanceof Number);
         console.log(a === b);
         console.log(n instanceof Object);
+        let sum = fn(1, 2);
+        console.log(sum);
         };
     </script>
 </head>
